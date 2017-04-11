@@ -1,0 +1,431 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{610140CE-440C-44B0-8DE7-BFA0DFB37220}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MainSocialClass</RootNamespace>
+    <AssemblyName>MainSocialClass</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Sybase.AdoNet2.AseClient, Version=2.157.104.0, Culture=neutral, PublicKeyToken=95d94fac46c88e1e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\PerformanceAssessment\Performance.Core\bin\Debug\Sybase.AdoNet2.AseClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Sybase.EnterpriseLibrary.AseClient, Version=4.1.1000.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\PerformanceAssessment\Performance.Core\bin\Debug\Sybase.EnterpriseLibrary.AseClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Sybase.VSIntegration.ASE, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\PerformanceAssessment\Performance.Core\bin\Debug\Sybase.VSIntegration.ASE.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountBalance.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="LogWriter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recharge.cs" />
+    <Compile Include="Response.cs" />
+    <Compile Include="Service References\ZenithCore\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="SocialActionClass.cs" />
+    <Compile Include="Statement.cs" />
+    <Compile Include="Utility.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Service References\ZenithCore\MainSocialClass.ZenithCore.AccountDetail.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ZenithCore\MainSocialClass.ZenithCore.AccountSummaryResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ZenithCore\MainSocialClass.ZenithCore.AirlineQueryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ZenithCore\MainSocialClass.ZenithCore.AirLineReportResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ZenithCore\MainSocialClass.ZenithCore.AirtimeMerchantResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ZenithCore\MainSocialClass.ZenithCore.BalanceResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ZenithCore\MainSocialClass.ZenithCore.BeneficiaryResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ZenithCore\MainSocialClass.ZenithCore.BillerResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ZenithCore\MainSocialClass.ZenithCore.BillsPaymentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ZenithCore\MainSocialClass.ZenithCore.Branch.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ZenithCore\MainSocialClass.ZenithCore.CardResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ZenithCore\MainSocialClass.ZenithCore.CategoryResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ZenithCore\MainSocialClass.ZenithCore.ChannelResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ZenithCore\MainSocialClass.ZenithCore.DispenseErrorQueryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ZenithCore\MainSocialClass.ZenithCore.DispenseErrorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ZenithCore\MainSocialClass.ZenithCore.DstvCustomerResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ZenithCore\MainSocialClass.ZenithCore.DstvProductResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ZenithCore\MainSocialClass.ZenithCore.InsertDisputeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ZenithCore\MainSocialClass.ZenithCore.LmtAtmStatementResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ZenithCore\MainSocialClass.ZenithCore.LmtQueryResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ZenithCore\MainSocialClass.ZenithCore.MessageCategory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ZenithCore\MainSocialClass.ZenithCore.NameInquiryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ZenithCore\MainSocialClass.ZenithCore.PhcnConfirmResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ZenithCore\MainSocialClass.ZenithCore.ReOcurringAirtimeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ZenithCore\MainSocialClass.ZenithCore.ReOcurringTransferResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ZenithCore\MainSocialClass.ZenithCore.Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ZenithCore\MainSocialClass.ZenithCore.SessionResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ZenithCore\MainSocialClass.ZenithCore.StandingOrderResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ZenithCore\MainSocialClass.ZenithCore.StatementGroupResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ZenithCore\MainSocialClass.ZenithCore.StatementResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ZenithCore\MainSocialClass.ZenithCore.TransferConfirmation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ZenithCore\MainSocialClass.ZenithCore.UtilityZoneResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore.wsdl" />
+    <None Include="Service References\ZenithCore\ZenithCore.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore10.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore14.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore15.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore16.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore17.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore18.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore19.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore20.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore21.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore22.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore23.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore24.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore25.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore26.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore27.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore28.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore29.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore30.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore32.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore33.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore34.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore35.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore36.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore37.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore38.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore39.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore40.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore41.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore42.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore43.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore44.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore45.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore46.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore47.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore48.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore49.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore50.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore51.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore52.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore53.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore54.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore55.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore56.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore57.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore58.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore59.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore60.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore61.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore62.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore63.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore64.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore65.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore66.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore67.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore68.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore69.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore70.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore71.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore72.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore73.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore74.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore75.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithCore9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ZenithCore\ZenithRequest.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ZenithCore\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ZenithCore\ZenithCore.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ZenithCore\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ZenithCore\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ZenithCore\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

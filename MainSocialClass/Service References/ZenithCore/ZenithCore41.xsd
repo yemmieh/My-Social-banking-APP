@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://zenithbank.com/core.orderResult" elementFormDefault="qualified" targetNamespace="http://zenithbank.com/core.orderResult" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd74" namespace="http://zenithbank.com/core.standingOrder" />
+  <xs:complexType name="StandingOrderResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResponseCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://zenithbank.com/core.standingOrder" minOccurs="0" name="StandingOrders" nillable="true" type="q1:ArrayOfStandingOrder" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StandingOrderResult" nillable="true" type="tns:StandingOrderResult" />
+</xs:schema>

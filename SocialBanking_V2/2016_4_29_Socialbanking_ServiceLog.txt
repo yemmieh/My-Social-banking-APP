@@ -1,0 +1,16 @@
+29/04/2016 9:08:18 : Purchase Quick Airtime : GSM Number : 08027224792
+29/04/2016 9:09:17 : Purchase Quick Airtime : Recharge Ammount : 10
+29/04/2016 9:09:17 : Purchase Quick Airtime : Status : YOUR TOTAL DAILY LIMIT FOR THIS TRANSACTION TYPE HAS EXCEEDED
+29/04/2016 9:09:17 : --------------------------------------------------------------------------------------------------
+29/04/2016 9:27:57 : Account Balance : Account Number : 2020261416
+29/04/2016 9:27:57 : Account Balance : Mobile Number : 08027224792
+29/04/2016 9:27:57 : Account Balance : Status : SUCCESSFUL
+29/04/2016 9:27:57 : --------------------------------------------------------------------------------------------------
+29/04/2016 9:28:23 : Account Balance : Account Number : 1234567891
+29/04/2016 9:28:23 : Account Balance : Mobile Number : 02145887459
+29/04/2016 9:28:23 : Account Balance : Status : THIS MOBILE NUMBER HAS NOT BEEN SETUP FOR ALERTZ
+29/04/2016 9:28:23 : --------------------------------------------------------------------------------------------------
+29/04/2016 9:58:37 : Purchase Quick Airtime : GSM Number : 08027224792
+29/04/2016 9:58:37 : Purchase Quick Airtime : Recharge Ammount : 50
+29/04/2016 9:58:37 : Purchase Quick Airtime : Status : YOUR TOTAL DAILY LIMIT FOR THIS TRANSACTION TYPE HAS EXCEEDED
+29/04/2016 9:58:37 : --------------------------------------------------------------------------------------------------

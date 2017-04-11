@@ -1,0 +1,11 @@
+21/04/2016 11:06:22 : ppoooo
+21/04/2016 11:39:35 : Account Balance : Account Number : 1020136056
+21/04/2016 11:39:35 : Account Balance : Mobile Number : 08027224792
+21/04/2016 11:39:35 : Account Balance : Status : SUCCESSFUL
+21/04/2016 11:39:35 : --------------------------------------------------------------------------------------------------
+21/04/2016 11:40:59 : Account Statement : Account Number : 1020136056
+21/04/2016 11:40:59 : Account Statement  : Email : yemioyetoro@gmail.com
+21/04/2016 11:40:59 : Account Statement  : BeginDate : 21/02/2016
+21/04/2016 11:40:59 : Account Statement  : EndDate : 21/04/2016
+21/04/2016 11:40:59 : Account Statement  : Status : Transaction Successfuul
+21/04/2016 11:40:59 : --------------------------------------------------------------------------------------------------

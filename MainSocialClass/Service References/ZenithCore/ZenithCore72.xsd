@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://zenithbank.com/core.MessageCategory" elementFormDefault="qualified" targetNamespace="http://zenithbank.com/core.MessageCategory" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfMessageCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MessageCategory" nillable="true" type="tns:MessageCategory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMessageCategory" nillable="true" type="tns:ArrayOfMessageCategory" />
+  <xs:complexType name="MessageCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Category" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:anyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MessageCategory" nillable="true" type="tns:MessageCategory" />
+</xs:schema>

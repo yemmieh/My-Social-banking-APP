@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://zenithbank.com/core.utilityZone" elementFormDefault="qualified" targetNamespace="http://zenithbank.com/core.utilityZone" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfUtilityZone">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UtilityZone" nillable="true" type="tns:UtilityZone" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUtilityZone" nillable="true" type="tns:ArrayOfUtilityZone" />
+  <xs:complexType name="UtilityZone">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ZoneCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ZoneID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UtilityZone" nillable="true" type="tns:UtilityZone" />
+</xs:schema>

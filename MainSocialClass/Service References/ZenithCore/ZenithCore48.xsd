@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://zenithbank.com/core.accountsum" elementFormDefault="qualified" targetNamespace="http://zenithbank.com/core.accountsum" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfAccountSummary">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AccountSummary" nillable="true" type="tns:AccountSummary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAccountSummary" nillable="true" type="tns:ArrayOfAccountSummary" />
+  <xs:complexType name="AccountSummary">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AccountNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AccountType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AvailableBalance" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BranchNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClassCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CurrencyBalance" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsoCurrency" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RimID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RimName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AccountSummary" nillable="true" type="tns:AccountSummary" />
+</xs:schema>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://zenithbank.com/core.acctdetail" elementFormDefault="qualified" targetNamespace="http://zenithbank.com/core.acctdetail" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="AccountDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AccountType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Acct_Desc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AvailableBalance" type="xs:decimal" />
+      <xs:element minOccurs="0" name="AvailableLocBalance" type="xs:decimal" />
+      <xs:element minOccurs="0" name="BranchNo" type="xs:int" />
+      <xs:element minOccurs="0" name="ClassCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClassDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Creditbearing" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Currency" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CurrentBalance" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CurrentBalanceBegin" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CustomerType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Date" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email_Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email_Address2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrorDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HoldBal" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IsoCurrencyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Issue_dt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ItemPending" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastDepositAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LastWithdrawalAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LastWithdrawalDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mat_dt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mobile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrigAmt" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PDBalance" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PDCredit" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PDDedit" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Passbook" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RSMName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReturnCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Rim" type="xs:int" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TermsOfAccount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title2" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AccountDetail" nillable="true" type="tns:AccountDetail" />
+</xs:schema>

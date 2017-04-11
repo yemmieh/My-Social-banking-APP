@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://zenithbank.com/core.standingOrder" elementFormDefault="qualified" targetNamespace="http://zenithbank.com/core.standingOrder" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfStandingOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StandingOrder" nillable="true" type="tns:StandingOrder" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStandingOrder" nillable="true" type="tns:ArrayOfStandingOrder" />
+  <xs:complexType name="StandingOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="BankCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreditAccount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DebitAccount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MobileNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MobileOperator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProcessDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ReOccurType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResponseCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StandingOrder" nillable="true" type="tns:StandingOrder" />
+</xs:schema>

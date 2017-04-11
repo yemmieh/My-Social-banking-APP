@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://zenithbank.com/core.dstvproduct" elementFormDefault="qualified" targetNamespace="http://zenithbank.com/core.dstvproduct" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfDstvProduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DstvProduct" nillable="true" type="tns:DstvProduct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDstvProduct" nillable="true" type="tns:ArrayOfDstvProduct" />
+  <xs:complexType name="DstvProduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Currency" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Price" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ProductCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DstvProduct" nillable="true" type="tns:DstvProduct" />
+</xs:schema>

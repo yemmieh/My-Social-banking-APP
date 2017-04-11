@@ -1,0 +1,113 @@
+﻿@model MainSocialClass.AccountBalance
+
+@{
+    ViewBag.Title = "Check Account Balance";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="main-container">
+
+    <br /><br /><br /><br />
+    @using (Html.BeginForm("GetAcctQuery", "AccountQuery", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <div class="row">
+                <div class="alert-one"></div>
+                <div class="errorDiv">
+                    <span>@ViewBag.ErrorMessage</span>
+                </div>
+            </div>
+                <div class="row">
+                    <span class="notifier">Please provide your 10 digit Zenith Bank account number and the mobile phone number tied to the account.</span>
+                </div>
+
+                <hr class="HrDivider" />
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.statusCode, new { @class = "statusCode" })
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2>NUBAN Account Number:</h2>
+
+                        @Html.EditorFor(model => model.AccountNumber, new { htmlAttributes = new { @class = "", autocomplete = "off" } })
+                        @Html.ValidationMessageFor(model => model.AccountNumber, "", new { @class = "text-danger" })
+
+                    </div>
+
+                    <div class="col-md-6">
+                        <h2>Registered Mobile No:</h2>
+                        @Html.EditorFor(model => model.MobileNumber, new { htmlAttributes = new { @class = "", autocomplete = "off" } })
+                        @Html.ValidationMessageFor(model => model.MobileNumber, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                <br />
+
+                <hr class="HrDivider" />
+                <div class="row">
+                    <div class="col-md-6">
+                        <button type="button" id="btncheck" class="submitBtn buttons-blue buttons btn-default check">Send My Balance </button>
+
+                    </div>
+
+                </div>
+            </div>
+    }
+</div>
+
+<script type="text/javascript">
+
+    $('.submitBtn').click(function () {
+
+        var mobileno = $.trim($("#MobileNumber").val());
+        var acctno = $.trim($("#AccountNumber").val());
+
+        if (!mobileno || !acctno) {
+            bootstrap_alert.error("Please provide valid account and mobile numbers.");
+            return false;
+        }
+       
+        document.forms[0].submit();
+    });
+    $(document).ready(function () {
+      //  alert($("#statusCode").val());
+        if ($('#statusCode').val() == "0") {
+
+            $('.errorDiv').addClass("alert alert-danger alert-dismissable");
+        }
+        if ($('#statusCode').val() == "00") {
+
+            $('.errorDiv').removeClass("alert alert-danger alert-dismissable");
+            $('.errorDiv').addClass("alert alert-success alert-dismissable");
+        }
+        if ($('#statusCode').val() == "") {
+
+            $('.errorDiv').removeClass("alert alert-danger alert-dismissable");
+            $('.errorDiv').removeClass("alert alert-success alert-dismissable");
+        }
+
+
+    });
+
+    var bootstrap_alert = function () { };
+    bootstrap_alert.error = function (message) {
+        $('.errorDiv').hide()
+        $('.alert-one')            
+            .html('<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><span>' + message + '</span></div>')
+    }
+    bootstrap_alert.success = function (message) {
+        $('.errorDiv').hide()
+        $('.alert-one')
+            .html('<div class="alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><span>' + message + '</span></div>')
+    }
+</script>
+    
+
+
+
+@*@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}*@

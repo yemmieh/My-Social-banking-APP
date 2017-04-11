@@ -1,0 +1,9 @@
+C:\Users\oyeyemi.oyetoro\Documents\Visual Studio 2013\Projects\SocialBanking_V2\MainSocialClass\bin\Release\MainSocialClass.dll.config
+C:\Users\oyeyemi.oyetoro\Documents\Visual Studio 2013\Projects\SocialBanking_V2\MainSocialClass\bin\Release\MainSocialClass.dll
+C:\Users\oyeyemi.oyetoro\Documents\Visual Studio 2013\Projects\SocialBanking_V2\MainSocialClass\bin\Release\MainSocialClass.pdb
+C:\Users\oyeyemi.oyetoro\Documents\Visual Studio 2013\Projects\SocialBanking_V2\MainSocialClass\bin\Release\Sybase.AdoNet2.AseClient.dll
+C:\Users\oyeyemi.oyetoro\Documents\Visual Studio 2013\Projects\SocialBanking_V2\MainSocialClass\bin\Release\Sybase.EnterpriseLibrary.AseClient.dll
+C:\Users\oyeyemi.oyetoro\Documents\Visual Studio 2013\Projects\SocialBanking_V2\MainSocialClass\bin\Release\Sybase.VSIntegration.ASE.dll
+C:\Users\oyeyemi.oyetoro\Documents\Visual Studio 2013\Projects\SocialBanking_V2\MainSocialClass\obj\Release\MainSocialClass.csprojResolveAssemblyReference.cache
+C:\Users\oyeyemi.oyetoro\Documents\Visual Studio 2013\Projects\SocialBanking_V2\MainSocialClass\obj\Release\MainSocialClass.dll
+C:\Users\oyeyemi.oyetoro\Documents\Visual Studio 2013\Projects\SocialBanking_V2\MainSocialClass\obj\Release\MainSocialClass.pdb

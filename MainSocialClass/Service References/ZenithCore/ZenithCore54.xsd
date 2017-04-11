@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://zenithbank.com/core.stmtreq" elementFormDefault="qualified" targetNamespace="http://zenithbank.com/core.stmtreq" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd2" namespace="http://zenithbank.com/core.clientauth" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd3" namespace="http://zenithbank.com/core.customerauth" />
+  <xs:complexType name="StatementReq">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AtmTranLogPtid" type="xs:decimal" />
+      <xs:element minOccurs="0" name="BeginDate" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://zenithbank.com/core.clientauth" minOccurs="0" name="ClientAuth" nillable="true" type="q1:Client" />
+      <xs:element minOccurs="0" name="Currency" type="xs:int" />
+      <xs:element xmlns:q2="http://zenithbank.com/core.customerauth" minOccurs="0" name="CustomerAuth" nillable="true" type="q2:CustomerAuth" />
+      <xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HighAmt" type="xs:decimal" />
+      <xs:element minOccurs="0" name="HighCheckNo" type="xs:decimal" />
+      <xs:element minOccurs="0" name="HistoryPtid" type="xs:decimal" />
+      <xs:element minOccurs="0" name="InbranchXpPtid" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IncludeUnclearedItems" type="xs:boolean" />
+      <xs:element minOccurs="0" name="JnalPtid" type="xs:int" />
+      <xs:element minOccurs="0" name="LowAmt" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LowCheckNo" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NoOfDaysBack" type="xs:int" />
+      <xs:element minOccurs="0" name="NoOfTrans" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportType" type="xs:unsignedByte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StatementReq" nillable="true" type="tns:StatementReq" />
+</xs:schema>

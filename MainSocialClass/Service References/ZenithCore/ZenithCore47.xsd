@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://zenithbank.com/core.cardResp" elementFormDefault="qualified" targetNamespace="http://zenithbank.com/core.cardResp" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd46" namespace="http://zenithbank.com/core.card" />
+  <xs:complexType name="CardResponse">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://zenithbank.com/core.card" minOccurs="0" name="Card" nillable="true" type="q1:ArrayOfCard" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResponseCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CardResponse" nillable="true" type="tns:CardResponse" />
+</xs:schema>

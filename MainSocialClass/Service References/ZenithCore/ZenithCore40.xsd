@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://zenithbank.com/core.branch" elementFormDefault="qualified" targetNamespace="http://zenithbank.com/core.branch" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfBranch">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Branch" nillable="true" type="tns:Branch" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBranch" nillable="true" type="tns:ArrayOfBranch" />
+  <xs:complexType name="Branch">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BranchName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BranchNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="Direction" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Shortname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Branch" nillable="true" type="tns:Branch" />
+</xs:schema>

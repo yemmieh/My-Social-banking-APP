@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://zenithbank.com/core.phcnreq" elementFormDefault="qualified" targetNamespace="http://zenithbank.com/core.phcnreq" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd2" namespace="http://zenithbank.com/core.clientauth" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd3" namespace="http://zenithbank.com/core.customerauth" />
+  <xs:complexType name="PhcnRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" type="xs:decimal" />
+      <xs:element xmlns:q1="http://zenithbank.com/core.clientauth" minOccurs="0" name="ClientAuth" nillable="true" type="q1:Client" />
+      <xs:element xmlns:q2="http://zenithbank.com/core.customerauth" minOccurs="0" name="CustomerAuth" nillable="true" type="q2:CustomerAuth" />
+      <xs:element minOccurs="0" name="CustomerRef" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MeterType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ZoneID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PhcnRequest" nillable="true" type="tns:PhcnRequest" />
+</xs:schema>

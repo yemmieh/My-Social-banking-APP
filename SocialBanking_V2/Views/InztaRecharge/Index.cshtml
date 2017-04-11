@@ -1,0 +1,278 @@
+﻿@model MainSocialClass.Recharge
+
+@{
+    ViewBag.Title = "Instant Airtime Recharge";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@*<div class="main-container">*@
+
+ 
+<br /><br /><br /><br />
+    @using (Html.BeginForm("rechargeCard", "InztaRecharge", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+
+        <div class="content-holder">
+            <div class="content-main content-card">
+                <div class="alert-one"></div>
+                <div class="errorDiv">
+                    <span>@ViewBag.ErrorMessage</span>
+                </div>
+                <span class="notifier">Max rechargeable amount is <strong class="amt-limit">3,000 NGN</strong> daily</span>
+                @Html.HiddenFor(model => model.Type, new { htmlAttributes = new { @class = "form-control Type" } })
+                @Html.HiddenFor(model => model.statusCode, new { @class = "statusCode" })
+                <hr class="HrDivider" />
+
+                <div class="gsm-toggle">
+                    <div class="gsm-toggle-a gsm-active" id="gsm-toggle-a">Recharge My Phone</div>
+                    <div class="gsm-toggle-b" id="gsm-toggle-b">Recharge Another Phone</div>
+                </div>
+
+                <div class="gsm-frame-box" style="width:100%;">
+                    
+                    <div id="generic-gsm">
+                        <div class="form-group three-column" style="float:left;width:100%  !important;">
+                            <label for="GSM" style="font-weight:normal;">GSM Number</label>
+                         
+                            @Html.EditorFor(model => model.GSMNumber, new { htmlAttributes = new { @class = "form-control GSMNumber", autocomplete = "off" } })
+                        </div>
+                        <div class="form-group three-column" style="float:left;width:100%  !important;">
+                            <label for="AMT" style="font-weight:normal;">Recharge Amount</label>
+                         
+                            @Html.EditorFor(model => model.RechargeAmount, new { htmlAttributes = new { @class = "form-control RechargeAmount", autocomplete = "off" } })
+                        </div>
+
+                        <div class="form-group three-column" style="float:left;width:100%  !important;">
+                            <label for="SPR" style="font-weight:normal;">Operator</label>
+                            @Html.DropDownListFor(model => model.Operator, MainSocialClass.Utility.getOperator(), "- Please select Operator -", new { id = "Operator", autocomplete = "off" })                          
+                        </div>
+                    </div>
+
+                    <div id="thirdPartyGsm">
+                        <div class="form-group first three-column " style="width:100% !important;">
+                            <label for="ACCT" style="font-weight:normal;">Account Number</label>
+                           
+                            @Html.EditorFor(model => model.AccountNumber, new { htmlAttributes = new { @class = "form-control AccountNumber", autocomplete = "off" } })
+                        </div>
+                        <div class="form-group three-column" style="float:left;width:100%  !important;">
+                            <label for="PIN" style="font-weight:100;">PIN+TOKEN</label>
+                         
+                            @Html.PasswordFor(model => model.PinToken, new { htmlAttributes = new { @class = "form-control PinToken", autocomplete = "off" } })
+                        </div>
+                    </div>
+
+                </div>
+
+                <input type="hidden" class="form-control" id="gsmoption" name="gsmoption" value="gsm-toggle-a">
+                <input type="hidden" class="form-control" id="merchantid" name="merchantid" value="5568">
+                <input type="hidden" class="form-control" id="currency" name="currency" value="NGN">
+                <input type="hidden" class="form-control" id="merch_txnref" name="merch_txnref" value=@ViewBag.Ref>
+
+                <div class="clearfix"></div>
+                <hr class="HrDivider" />
+                <div class="form-group three-column">
+                  
+                    <button type="button" id="btncheck" class="submitBtn buttons-blue buttons btn-default check">Recharge Now</button>
+                </div>
+            </div>
+        </div>
+    }
+
+
+<script type="text/javascript">
+    $('.submitBtn').click(function () {
+
+
+        var ACCT = $.trim($("#AccountNumber").val());
+        var AMT = $.trim($("#RechargeAmount").val());
+        var GSM = $.trim($("#GSMNumber").val());
+        var SPR = $.trim($("#Operator option:selected").val())
+        var PIN = $.trim($("#PinToken").val());
+
+        var _DATA = "{'AMT':'" + AMT + "', 'GSM':'" + GSM + "', 'ACCT':'" + ACCT + "', 'PIN':'" + PIN + "', 'TYPE':'1'" + ", 'SPR':'" + SPR + "'}";
+        if (!GSM || GSM.length != 11) {
+            bootstrap_alert.error("Please provide a valid 10-digit GSM number. Eg: 08030929040");
+            return false;
+        }
+        if (!AMT || isNaN(AMT)) {
+            bootstrap_alert.error("Please provide a valid amount.");
+            return false;
+        }
+        if (AMT < 1) {
+            bootstrap_alert.error("Minimum recharge amount is One (1) Naira.");
+            return false;
+        }
+        if (AMT > 3000) {
+            bootstrap_alert.error("Maximum recharge amount is Three thousand (3,000) Naira.");
+            return false;
+        }
+        if (SPR == "0") {
+            bootstrap_alert.error("Please select the operator.");
+            return false;
+        }
+
+        if ($("#gsmoption").val() == "gsm-toggle-b") {
+            _DATA = "{'AMT':'" + AMT + "', 'GSM':'" + GSM + "', 'ACCT':'" + ACCT + "', 'PIN':'" + PIN + "', 'TYPE':'2'" + ", 'SPR':'" + SPR + "'}";
+            if (!ACCT || ACCT.length != 10) {
+                bootstrap_alert.error("Please provide a valid account number.");
+                return false;
+            }
+            if (!PIN) {
+                bootstrap_alert.error("Please provide your PIN+TOKEN.");
+                return false;
+            }
+        }
+
+        document.forms[0].submit();
+    });
+
+
+    $(document).ready(function () {
+        //  alert($("#statusCode").val());
+        if ($('#statusCode').val() == "0") {
+
+            $('.errorDiv').addClass("alert alert-danger alert-dismissable");
+        }
+        if ($('#statusCode').val() == "00") {
+
+            $('.errorDiv').removeClass("alert alert-danger alert-dismissable");
+            $('.errorDiv').addClass("alert alert-success alert-dismissable");
+        }
+        if ($('#statusCode').val() == "") {
+
+            $('.errorDiv').removeClass("alert alert-danger alert-dismissable");
+            $('.errorDiv').removeClass("alert alert-success alert-dismissable");
+        }
+
+
+    });
+
+        var gsmtoggle = $(".gsm-toggle-a , .gsm-toggle-b");
+        gsmtoggle.click(function () {
+            $(".gsm-toggle-a , .gsm-toggle-b").removeClass("gsm-active");
+            gsmtoggle = $(this);
+            $("#gsmoption").val(gsmtoggle.attr("id"));
+            gsmtoggle.addClass("gsm-active");
+
+            var thirdPartyGsm = $("#thirdPartyGsm");
+            if (gsmtoggle.hasClass("gsm-toggle-a")) {
+                thirdPartyGsm.css("display", "none");
+                $("#Type").val("0")
+            } else {
+                thirdPartyGsm.css("display", "block");
+                $("#Type").val("1")
+            }
+
+            $("#generic-gsm , #thirdPartyGsm").find("input").val("");
+            $("#generic-gsm , #thirdPartyGsm").find("select").val("0");
+        });
+
+        //$(function () {
+        //    $('#btnrchg').on("click", function () {
+
+        //        var ACCT = $.trim($("#ACCT").val());
+        //        var AMT  = $.trim($("#AMT").val());
+        //        var GSM  = $.trim($("#GSM").val());
+        //        var SPR  = $.trim($("#SPR option:selected").val())
+        //        var PIN  = $.trim($("#PIN").val());
+
+        //        var _DATA = "{'AMT':'" + AMT + "', 'GSM':'" + GSM + "', 'ACCT':'" + ACCT + "', 'PIN':'" + PIN + "', 'TYPE':'1'" + ", 'SPR':'" + SPR + "'}";
+        //        if (!GSM || GSM.length != 11) {
+        //            bootstrap_alert.error("Please provide a valid 10-digit GSM number. Eg: 08030929040");
+        //            return false;
+        //        }
+        //        if (!AMT || isNaN(AMT) ) {
+        //            bootstrap_alert.error("Please provide a valid amount.");
+        //            return false;
+        //        }
+        //        if ( AMT < 1 ) {
+        //            bootstrap_alert.error("Minimum recharge amount is One (1) Naira.");
+        //            return false;
+        //        }
+        //        if ( AMT > 3000 ) {
+        //            bootstrap_alert.error("Maximum recharge amount is Three thousand (3,000) Naira.");
+        //            return false;
+        //        }
+        //        if (SPR == "0" ) {
+        //            bootstrap_alert.error("Please select the operator.");
+        //            return false;
+        //        }
+
+        //        if ($("#gsmoption").val() == "gsm-toggle-b") {
+        //            _DATA = "{'AMT':'" + AMT + "', 'GSM':'" + GSM + "', 'ACCT':'" + ACCT + "', 'PIN':'" + PIN + "', 'TYPE':'2'" + ", 'SPR':'" + SPR + "'}";
+        //            if (!ACCT || ACCT.length != 10) {
+        //                bootstrap_alert.error("Please provide a valid account number.");
+        //                return false;
+        //            }
+        //            if ( !PIN ) {
+        //                bootstrap_alert.error("Please provide your PIN+TOKEN.");
+        //                return false;
+        //            }
+        //        }
+
+        //        $.ajax({
+        //            type: "POST"
+        //            , url: "RechargeResult"
+        //            , data: _DATA
+        //            , contentType: "application/json; charset=utf-8"
+        //            , dataType: "json"
+        //            , beforeSend: function () {
+        //                $("input,button").prop("disabled", true);
+        //            }
+        //            , complete: function () {
+        //                $("input,button").prop("disabled", false);
+        //            }
+        //        }).success(function (json) {
+        //            if (json.Key == "00") {
+        //                bootstrap_alert.success(json.Value);
+        //            } else {
+        //                bootstrap_alert.error(json.Value);
+        //            }
+        //        }).error(function (json, error, status) {
+        //            bootstrap_alert.error(json.Value);
+        //        })
+        //    })
+
+        //});
+
+        //var def_width = $('.progress-bar').width();
+        //var progress = setInterval(function () {
+        //    var $bar = $('.progress-bar');
+        //    //def_width = $bar.width();
+        //    if ($bar.width() / def_width == 100) {
+        //        clearInterval(progress);
+        //        $('.progress-bar').removeClass('active');
+        //    } else {
+        //        $bar.width($bar.width() + 100);
+        //    }
+        //    $bar.text(parseInt(($bar.width() / def_width) * 5) + "%");
+        //}, 100);
+
+        //var bootstrap_alert = function () { };
+        //bootstrap_alert.error = function (message) {
+        //    $('.alert-one')
+        //        .html('<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><span>' + message + '</span></div>')
+        //}
+        //bootstrap_alert.success = function (message) {
+        //    $('.alert-one')
+        //        .html('<div class="alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><span>' + message + '</span></div>')
+        //}
+        var bootstrap_alert = function () { };
+        bootstrap_alert.error = function (message) {
+            $('.errorDiv').hide()
+            $('.alert-one')
+                .html('<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><span>' + message + '</span></div>')
+        }
+        bootstrap_alert.success = function (message) {
+            $('.errorDiv').hide()
+            $('.alert-one')
+                .html('<div class="alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><span>' + message + '</span></div>')
+        }
+</script>
+@*</div>*@
+    @*<div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>*@

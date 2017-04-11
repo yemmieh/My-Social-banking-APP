@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://zenithbank.com/core.billerResp" elementFormDefault="qualified" targetNamespace="http://zenithbank.com/core.billerResp" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd49" namespace="http://zenithbank.com/core.biller" />
+  <xs:complexType name="BillerResp">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://zenithbank.com/core.biller" minOccurs="0" name="Billers" nillable="true" type="q1:ArrayOfBiller" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResponseCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BillerResp" nillable="true" type="tns:BillerResp" />
+</xs:schema>

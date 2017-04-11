@@ -1,0 +1,2108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://zenithbank.com/core" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://tempuri.org/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ZenithRequest" targetNamespace="http://zenithbank.com/core" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://tempuri.org/" location="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?wsdl=wsdl0" />
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://zenithbank.com/core/Imports">
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd0" namespace="http://zenithbank.com/core" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd2" namespace="http://zenithbank.com/core.clientauth" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd3" namespace="http://zenithbank.com/core.customerauth" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd4" namespace="http://zenithbank.com/core.response" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/com.zenith.zcore.library" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd7" namespace="http://zenithbank.com/core.accountreq" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd8" namespace="http://zenithbank.com/core.authreq" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd9" namespace="http://zenithbank.com/core.authtypeReq" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd10" namespace="http://zenithbank.com/core.balance" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd11" namespace="http://zenithbank.com/core.acctdetail" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd12" namespace="http://zenithbank.com/core.quickacctsum" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd13" namespace="http://zenithbank.com/core.stmtreq" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd14" namespace="http://zenithbank.com/core.stmtresp" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd15" namespace="http://zenithbank.com/core.stmt" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd16" namespace="http://zenithbank.com/core.accountsumreq" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd17" namespace="http://zenithbank.com/core.accountsumresp" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd18" namespace="http://zenithbank.com/core.accountsum" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd19" namespace="http://zenithbank.com/core.stmtmail" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd20" namespace="http://zenithbank.com/core.stopchq" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd21" namespace="http://zenithbank.com/core.chkreq" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd22" namespace="http://zenithbank.com/core.trf" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd23" namespace="http://zenithbank.com/core.ZenithTransfer" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd24" namespace="http://zenithbank.com/core.ThirdPartyTransfer" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd25" namespace="http://zenithbank.com/core.TransferThirdParty" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd26" namespace="http://zenithbank.com/core.airtelmerchantresp" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd27" namespace="http://zenithbank.com/core.airtimemerchant" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd28" namespace="http://zenithbank.com/core.airtimepurchase" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd29" namespace="http://zenithbank.com/core.billpayment" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd30" namespace="http://zenithbank.com/core.phcnreq" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd31" namespace="http://zenithbank.com/core.phcnConfirm" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd32" namespace="http://zenithbank.com/core.pymtchannelresp" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd33" namespace="http://zenithbank.com/core.paymentchannel" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd34" namespace="http://zenithbank.com/core.zoneresp" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd35" namespace="http://zenithbank.com/core.utilityZone" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd36" namespace="http://zenithbank.com/core.phcnpayment" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd37" namespace="http://zenithbank.com/core.branch" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd38" namespace="http://zenithbank.com/core.dstvCustResp" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd39" namespace="http://zenithbank.com/core.dstvCust" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd40" namespace="http://zenithbank.com/core.dstvPayment" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd41" namespace="http://zenithbank.com/core.dstvproductResp" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd42" namespace="http://zenithbank.com/core.dstvproduct" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd43" namespace="http://zenithbank.com/core.nameInquiry" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd44" namespace="http://zenithbank.com/core.nameinquiryResp" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd45" namespace="http://zenithbank.com/core.cardResp" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd46" namespace="http://zenithbank.com/core.card" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd47" namespace="http://zenithbank.com/core.carddetail" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd48" namespace="http://zenithbank.com/core.billerResp" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd49" namespace="http://zenithbank.com/core.biller" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd50" namespace="http://zenithbank.com/core.billerfield" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd51" namespace="http://zenithbank.com/core.CategoryReq" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd52" namespace="http://zenithbank.com/core.AmtTransfer" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd53" namespace="http://zenithbank.com/core.lmtQuery" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd54" namespace="http://zenithbank.com/core.lmtQueryResp" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd55" namespace="http://zenithbank.com/core.TransferAtm" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd56" namespace="http://zenithbank.com/core.lmtQueryById" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd57" namespace="http://zenithbank.com/core.maccount" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd58" namespace="http://zenithbank.com/core.mobileConfirmation" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd59" namespace="http://zenithbank.com/core.mRegistration" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd60" namespace="http://zenithbank.com/core.ReOccurTransfer" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd61" namespace="http://zenithbank.com/core.StandingOrderAirtime" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd62" namespace="http://zenithbank.com/core.PinReset" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd63" namespace="http://zenithbank.com/core.beneficiaryReq" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd64" namespace="http://zenithbank.com/core.beneficiary" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd65" namespace="http://zenithbank.com/core.beneficiaryResp" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd66" namespace="http://zenithbank.com/core.ReOccurListReq" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd67" namespace="http://zenithbank.com/core.ReOcurringAirtimeResp" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd68" namespace="http://zenithbank.com/core.ReOcurringTransferResp" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd69" namespace="http://zenithbank.com/core.MessageCategory" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd70" namespace="http://zenithbank.com/core.CategoryResp" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd71" namespace="http://zenithbank.com/core.BillerCategory" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd72" namespace="http://zenithbank.com/core.StandOrderEnq" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd73" namespace="http://zenithbank.com/core.orderResult" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd74" namespace="http://zenithbank.com/core.standingOrder" />
+      <xsd:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd75" namespace="http://zenithbank.com/core.ConfirmReq" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IZenithRequest_ConfirmSoftToken_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmSoftToken" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_ConfirmSoftToken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmSoftTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_IbankAdditionalDeviceConfirm_InputMessage">
+    <wsdl:part name="parameters" element="tns:IbankAdditionalDeviceConfirm" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_IbankAdditionalDeviceConfirm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IbankAdditionalDeviceConfirmResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_LastTransferConfirmationRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:LastTransferConfirmationRequest" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_LastTransferConfirmationRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LastTransferConfirmationRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetAccountCustomerID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountCustomerID" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetAccountCustomerID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountCustomerIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_DebitCustomerForIswTransfer_InputMessage">
+    <wsdl:part name="parameters" element="tns:DebitCustomerForIswTransfer" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_DebitCustomerForIswTransfer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DebitCustomerForIswTransferResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetNibbsSessionID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNibbsSessionID" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetNibbsSessionID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNibbsSessionIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetRimAssociateWithAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRimAssociateWithAccount" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetRimAssociateWithAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRimAssociateWithAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetDisputedTrans_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDisputedTrans" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetDisputedTrans_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDisputedTransResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetDisputedTransStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDisputedTransStatus" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetDisputedTransStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDisputedTransStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_InsertDisputedTrans_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertDisputedTrans" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_InsertDisputedTrans_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertDisputedTransResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_AccountCreation_InputMessage">
+    <wsdl:part name="parameters" element="tns:AccountCreation" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_AccountCreation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AccountCreationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_UserUssdExist_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserUssdExist" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_UserUssdExist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserUssdExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_PostAirlinePayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:PostAirlinePayment" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_PostAirlinePayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PostAirlinePaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_QueryAirlineTransaction_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryAirlineTransaction" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_QueryAirlineTransaction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryAirlineTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_PostCustomPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:PostCustomPayment" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_PostCustomPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PostCustomPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetCustomBiller_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomBiller" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetCustomBiller_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomBillerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_BvnUpdateRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:BvnUpdateRequest" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_BvnUpdateRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BvnUpdateRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_QueryAirlineTransByRimNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryAirlineTransByRimNo" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_QueryAirlineTransByRimNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryAirlineTransByRimNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_QueryAirlineTransByDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryAirlineTransByDate" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_QueryAirlineTransByDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryAirlineTransByDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_QueryBillsPaymentTransactions_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryBillsPaymentTransactions" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_QueryBillsPaymentTransactions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryBillsPaymentTransactionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_QueryZenithTransactions_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryZenithTransactions" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_QueryZenithTransactions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryZenithTransactionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_AuthenticateReq_InputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateReq" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_AuthenticateReq_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateReqResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetAuthenticationType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuthenticationType" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetAuthenticationType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuthenticationTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_CreateAuthenticationType_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAuthenticationType" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_CreateAuthenticationType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAuthenticationTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_OpeningBalance_InputMessage">
+    <wsdl:part name="parameters" element="tns:OpeningBalance" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_OpeningBalance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OpeningBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetAccountDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountDetail" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetAccountDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_SendAccountBalance_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendAccountBalance" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_SendAccountBalance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendAccountBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetAccountStatement_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountStatement" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetAccountStatement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountStatementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_TransferGetAccountSummaries_InputMessage">
+    <wsdl:part name="parameters" element="tns:TransferGetAccountSummaries" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_TransferGetAccountSummaries_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TransferGetAccountSummariesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetAccountSummaries_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountSummaries" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetAccountSummaries_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountSummariesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetMinistatement_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMinistatement" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetMinistatement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMinistatementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_SendStatementByEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendStatementByEmail" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_SendStatementByEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendStatementByEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_StopCheque_InputMessage">
+    <wsdl:part name="parameters" element="tns:StopCheque" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_StopCheque_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StopChequeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_RequestChequeBook_InputMessage">
+    <wsdl:part name="parameters" element="tns:RequestChequeBook" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_RequestChequeBook_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RequestChequeBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_Transfer_InputMessage">
+    <wsdl:part name="parameters" element="tns:Transfer" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_Transfer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TransferResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_FundTransferONUS_InputMessage">
+    <wsdl:part name="parameters" element="tns:FundTransferONUS" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_FundTransferONUS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FundTransferONUSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_ThirdPartyTransferOtherBank_InputMessage">
+    <wsdl:part name="parameters" element="tns:ThirdPartyTransferOtherBank" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_ThirdPartyTransferOtherBank_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ThirdPartyTransferOtherBankResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_ThirdPartyTransferOtherBankConfirm_InputMessage">
+    <wsdl:part name="parameters" element="tns:ThirdPartyTransferOtherBankConfirm" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_ThirdPartyTransferOtherBankConfirm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ThirdPartyTransferOtherBankConfirmResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_ThirdPartyLocalMoneyTransfer_InputMessage">
+    <wsdl:part name="parameters" element="tns:ThirdPartyLocalMoneyTransfer" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_ThirdPartyLocalMoneyTransfer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ThirdPartyLocalMoneyTransferResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetAirtimemerchant_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAirtimemerchant" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetAirtimemerchant_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAirtimemerchantResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_AirtimePurchase_InputMessage">
+    <wsdl:part name="parameters" element="tns:AirtimePurchase" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_AirtimePurchase_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AirtimePurchaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_BillsPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:BillsPayment" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_BillsPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BillsPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_ConfirmPhcnCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmPhcnCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_ConfirmPhcnCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmPhcnCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetPaymentChannel_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPaymentChannel" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetPaymentChannel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPaymentChannelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetElectricityZone_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetElectricityZone" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetElectricityZone_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetElectricityZoneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_PostPhcnPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:PostPhcnPayment" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_PostPhcnPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PostPhcnPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetBankBranch_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBankBranch" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetBankBranch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBankBranchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_ProcessDTSVPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessDTSVPayment" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_ProcessDTSVPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessDTSVPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetDstvProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDstvProduct" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetDstvProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDstvProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetAccountNameInquiry_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountNameInquiry" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetAccountNameInquiry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountNameInquiryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetCardRecords_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCardRecords" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetCardRecords_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCardRecordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_DeactivateCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeactivateCard" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_DeactivateCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeactivateCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_ActivateCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActivateCard" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_ActivateCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActivateCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_ConfirmCheque_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmCheque" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_ConfirmCheque_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmChequeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetBillers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBillers" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetBillers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBillersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetBillersName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBillersName" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetBillersName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBillersNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetBillersByCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBillersByCategory" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetBillersByCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBillersByCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetBillersByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBillersByID" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetBillersByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBillersByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_BlockCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:BlockCard" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_BlockCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BlockCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_UnBlockCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnBlockCard" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_UnBlockCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnBlockCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_HashPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:HashPassword" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_HashPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HashPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_ThirdPartyAtmTransfer_InputMessage">
+    <wsdl:part name="parameters" element="tns:ThirdPartyAtmTransfer" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_ThirdPartyAtmTransfer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ThirdPartyAtmTransferResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetCustomerLmtATMTransfer_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerLmtATMTransfer" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetCustomerLmtATMTransfer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerLmtATMTransferResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetCustomerLmtATMTransferByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerLmtATMTransferByID" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetCustomerLmtATMTransferByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerLmtATMTransferByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_RecallLmtATMTransferByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:RecallLmtATMTransferByID" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_RecallLmtATMTransferByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RecallLmtATMTransferByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetLmtAtmBalance_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLmtAtmBalance" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetLmtAtmBalance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLmtAtmBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_ResendLmtAtmTransferDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResendLmtAtmTransferDetail" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_ResendLmtAtmTransferDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResendLmtAtmTransferDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetLmtAtmTransactionHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLmtAtmTransactionHistory" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetLmtAtmTransactionHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLmtAtmTransactionHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_SendLmtAtmTransactionHistoryByEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendLmtAtmTransactionHistoryByEmail" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_SendLmtAtmTransactionHistoryByEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendLmtAtmTransactionHistoryByEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_BuyQuickAirtime_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuyQuickAirtime" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_BuyQuickAirtime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuyQuickAirtimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_ConfirmMobileAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmMobileAccount" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_ConfirmMobileAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmMobileAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_ValidateMobileRegToken_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateMobileRegToken" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_ValidateMobileRegToken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateMobileRegTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_RegisterZMobile_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterZMobile" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_RegisterZMobile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterZMobileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_RegisterUSSD_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterUSSD" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_RegisterUSSD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterUSSDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetAccountName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountName" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetAccountName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_InitiateReOcurringTransfer_InputMessage">
+    <wsdl:part name="parameters" element="tns:InitiateReOcurringTransfer" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_InitiateReOcurringTransfer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InitiateReOcurringTransferResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_EditReOcurringTransfer_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditReOcurringTransfer" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_EditReOcurringTransfer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditReOcurringTransferResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_StopReOccurringTransfer_InputMessage">
+    <wsdl:part name="parameters" element="tns:StopReOccurringTransfer" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_StopReOccurringTransfer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StopReOccurringTransferResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_ReOcurringAirtime_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReOcurringAirtime" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_ReOcurringAirtime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReOcurringAirtimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_StopReOcurringAirtime_InputMessage">
+    <wsdl:part name="parameters" element="tns:StopReOcurringAirtime" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_StopReOcurringAirtime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StopReOcurringAirtimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_EditReOcurringAirtime_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditReOcurringAirtime" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_EditReOcurringAirtime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditReOcurringAirtimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_DeleteAirtime_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAirtime" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_DeleteAirtime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAirtimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_ChangeMobilePassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeMobilePassword" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_ChangeMobilePassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeMobilePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_ChangeMobilePIN_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeMobilePIN" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_ChangeMobilePIN_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeMobilePINResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GroupStatementByKeywords_InputMessage">
+    <wsdl:part name="parameters" element="tns:GroupStatementByKeywords" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GroupStatementByKeywords_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GroupStatementByKeywordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_ResetMobilePINRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResetMobilePINRequest" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_ResetMobilePINRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResetMobilePINRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_ResetMobilePINConfirmation_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResetMobilePINConfirmation" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_ResetMobilePINConfirmation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResetMobilePINConfirmationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_CreateBeneficiary_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateBeneficiary" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_CreateBeneficiary_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateBeneficiaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_EditBeneficiary_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditBeneficiary" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_EditBeneficiary_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditBeneficiaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_DeleteBeneficiary_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBeneficiary" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_DeleteBeneficiary_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBeneficiaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetBeneficiaries_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBeneficiaries" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetBeneficiaries_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBeneficiariesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetZenithBeneficiaries_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetZenithBeneficiaries" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetZenithBeneficiaries_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetZenithBeneficiariesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetOtherBanksBeneficiaries_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOtherBanksBeneficiaries" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetOtherBanksBeneficiaries_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOtherBanksBeneficiariesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetBeneficiariesByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBeneficiariesByName" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetBeneficiariesByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBeneficiariesByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetReoccurringAirtime_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReoccurringAirtime" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetReoccurringAirtime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReoccurringAirtimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetReoccurringTransfer_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReoccurringTransfer" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetReoccurringTransfer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReoccurringTransferResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_SendMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendMessage" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_SendMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetMessageCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMessageCategory" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetMessageCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMessageCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetLoginSession_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoginSession" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetLoginSession_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoginSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetBillersCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBillersCategories" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_GetBillersCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBillersCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_StandingOrderQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:StandingOrderQuery" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_StandingOrderQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StandingOrderQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_MastcardMerchantPay_InputMessage">
+    <wsdl:part name="parameters" element="tns:MastcardMerchantPay" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_MastcardMerchantPay_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MastcardMerchantPayResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_ConfirmTransfer_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmTransfer" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_ConfirmTransfer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmTransferResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_AccountNumberExist_InputMessage">
+    <wsdl:part name="parameters" element="tns:AccountNumberExist" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_AccountNumberExist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AccountNumberExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_SoftTokenAuthenticationGen_InputMessage">
+    <wsdl:part name="parameters" element="tns:SoftTokenAuthenticationGen" />
+  </wsdl:message>
+  <wsdl:message name="IZenithRequest_SoftTokenAuthenticationGen_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SoftTokenAuthenticationGenResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IZenithRequest">
+    <wsdl:operation name="ConfirmSoftToken">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/ConfirmSoftToken" message="tns:IZenithRequest_ConfirmSoftToken_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/ConfirmSoftTokenResponse" message="tns:IZenithRequest_ConfirmSoftToken_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IbankAdditionalDeviceConfirm">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/IbankAdditionalDeviceConfirm" message="tns:IZenithRequest_IbankAdditionalDeviceConfirm_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/IbankAdditionalDeviceConfirmResponse" message="tns:IZenithRequest_IbankAdditionalDeviceConfirm_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LastTransferConfirmationRequest">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/LastTransferConfirmationRequest" message="tns:IZenithRequest_LastTransferConfirmationRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/LastTransferConfirmationRequestResponse" message="tns:IZenithRequest_LastTransferConfirmationRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountCustomerID">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetAccountCustomerID" message="tns:IZenithRequest_GetAccountCustomerID_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetAccountCustomerIDResponse" message="tns:IZenithRequest_GetAccountCustomerID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DebitCustomerForIswTransfer">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/DebitCustomerForIswTransfer" message="tns:IZenithRequest_DebitCustomerForIswTransfer_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/DebitCustomerForIswTransferResponse" message="tns:IZenithRequest_DebitCustomerForIswTransfer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNibbsSessionID">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetNibbsSessionID" message="tns:IZenithRequest_GetNibbsSessionID_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetNibbsSessionIDResponse" message="tns:IZenithRequest_GetNibbsSessionID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRimAssociateWithAccount">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetRimAssociateWithAccount" message="tns:IZenithRequest_GetRimAssociateWithAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetRimAssociateWithAccountResponse" message="tns:IZenithRequest_GetRimAssociateWithAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDisputedTrans">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetDisputedTrans" message="tns:IZenithRequest_GetDisputedTrans_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetDisputedTransResponse" message="tns:IZenithRequest_GetDisputedTrans_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDisputedTransStatus">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetDisputedTransStatus" message="tns:IZenithRequest_GetDisputedTransStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetDisputedTransStatusResponse" message="tns:IZenithRequest_GetDisputedTransStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertDisputedTrans">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/InsertDisputedTrans" message="tns:IZenithRequest_InsertDisputedTrans_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/InsertDisputedTransResponse" message="tns:IZenithRequest_InsertDisputedTrans_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AccountCreation">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/AccountCreation" message="tns:IZenithRequest_AccountCreation_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/AccountCreationResponse" message="tns:IZenithRequest_AccountCreation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserUssdExist">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/UserUssdExist" message="tns:IZenithRequest_UserUssdExist_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/UserUssdExistResponse" message="tns:IZenithRequest_UserUssdExist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PostAirlinePayment">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/PostAirlinePayment" message="tns:IZenithRequest_PostAirlinePayment_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/PostAirlinePaymentResponse" message="tns:IZenithRequest_PostAirlinePayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryAirlineTransaction">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/QueryAirlineTransaction" message="tns:IZenithRequest_QueryAirlineTransaction_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/QueryAirlineTransactionResponse" message="tns:IZenithRequest_QueryAirlineTransaction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PostCustomPayment">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/PostCustomPayment" message="tns:IZenithRequest_PostCustomPayment_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/PostCustomPaymentResponse" message="tns:IZenithRequest_PostCustomPayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomBiller">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetCustomBiller" message="tns:IZenithRequest_GetCustomBiller_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetCustomBillerResponse" message="tns:IZenithRequest_GetCustomBiller_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BvnUpdateRequest">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/BvnUpdateRequest" message="tns:IZenithRequest_BvnUpdateRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/BvnUpdateRequestResponse" message="tns:IZenithRequest_BvnUpdateRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryAirlineTransByRimNo">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/QueryAirlineTransByRimNo" message="tns:IZenithRequest_QueryAirlineTransByRimNo_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/QueryAirlineTransByRimNoResponse" message="tns:IZenithRequest_QueryAirlineTransByRimNo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryAirlineTransByDate">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/QueryAirlineTransByDate" message="tns:IZenithRequest_QueryAirlineTransByDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/QueryAirlineTransByDateResponse" message="tns:IZenithRequest_QueryAirlineTransByDate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryBillsPaymentTransactions">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/QueryBillsPaymentTransactions" message="tns:IZenithRequest_QueryBillsPaymentTransactions_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/QueryBillsPaymentTransactionsResponse" message="tns:IZenithRequest_QueryBillsPaymentTransactions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryZenithTransactions">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/QueryZenithTransactions" message="tns:IZenithRequest_QueryZenithTransactions_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/QueryZenithTransactionsResponse" message="tns:IZenithRequest_QueryZenithTransactions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateReq">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/AuthenticateReq" message="tns:IZenithRequest_AuthenticateReq_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/AuthenticateReqResponse" message="tns:IZenithRequest_AuthenticateReq_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAuthenticationType">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetAuthenticationType" message="tns:IZenithRequest_GetAuthenticationType_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetAuthenticationTypeResponse" message="tns:IZenithRequest_GetAuthenticationType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateAuthenticationType">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/CreateAuthenticationType" message="tns:IZenithRequest_CreateAuthenticationType_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/CreateAuthenticationTypeResponse" message="tns:IZenithRequest_CreateAuthenticationType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OpeningBalance">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/OpeningBalance" message="tns:IZenithRequest_OpeningBalance_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/OpeningBalanceResponse" message="tns:IZenithRequest_OpeningBalance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountDetail">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetAccountDetail" message="tns:IZenithRequest_GetAccountDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetAccountDetailResponse" message="tns:IZenithRequest_GetAccountDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendAccountBalance">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/SendAccountBalance" message="tns:IZenithRequest_SendAccountBalance_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/SendAccountBalanceResponse" message="tns:IZenithRequest_SendAccountBalance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountStatement">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetAccountStatement" message="tns:IZenithRequest_GetAccountStatement_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetAccountStatementResponse" message="tns:IZenithRequest_GetAccountStatement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TransferGetAccountSummaries">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/TransferGetAccountSummaries" message="tns:IZenithRequest_TransferGetAccountSummaries_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/TransferGetAccountSummariesResponse" message="tns:IZenithRequest_TransferGetAccountSummaries_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountSummaries">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetAccountSummaries" message="tns:IZenithRequest_GetAccountSummaries_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetAccountSummariesResponse" message="tns:IZenithRequest_GetAccountSummaries_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMinistatement">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetMinistatement" message="tns:IZenithRequest_GetMinistatement_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetMinistatementResponse" message="tns:IZenithRequest_GetMinistatement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendStatementByEmail">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/SendStatementByEmail" message="tns:IZenithRequest_SendStatementByEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/SendStatementByEmailResponse" message="tns:IZenithRequest_SendStatementByEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StopCheque">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/StopCheque" message="tns:IZenithRequest_StopCheque_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/StopChequeResponse" message="tns:IZenithRequest_StopCheque_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RequestChequeBook">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/RequestChequeBook" message="tns:IZenithRequest_RequestChequeBook_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/RequestChequeBookResponse" message="tns:IZenithRequest_RequestChequeBook_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Transfer">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/Transfer" message="tns:IZenithRequest_Transfer_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/TransferResponse" message="tns:IZenithRequest_Transfer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FundTransferONUS">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/FundTransferONUS" message="tns:IZenithRequest_FundTransferONUS_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/FundTransferONUSResponse" message="tns:IZenithRequest_FundTransferONUS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ThirdPartyTransferOtherBank">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/ThirdPartyTransferOtherBank" message="tns:IZenithRequest_ThirdPartyTransferOtherBank_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/ThirdPartyTransferOtherBankResponse" message="tns:IZenithRequest_ThirdPartyTransferOtherBank_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ThirdPartyTransferOtherBankConfirm">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/ThirdPartyTransferOtherBankConfirm" message="tns:IZenithRequest_ThirdPartyTransferOtherBankConfirm_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/ThirdPartyTransferOtherBankConfirmResponse" message="tns:IZenithRequest_ThirdPartyTransferOtherBankConfirm_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ThirdPartyLocalMoneyTransfer">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/ThirdPartyLocalMoneyTransfer" message="tns:IZenithRequest_ThirdPartyLocalMoneyTransfer_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/ThirdPartyLocalMoneyTransferResponse" message="tns:IZenithRequest_ThirdPartyLocalMoneyTransfer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAirtimemerchant">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetAirtimemerchant" message="tns:IZenithRequest_GetAirtimemerchant_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetAirtimemerchantResponse" message="tns:IZenithRequest_GetAirtimemerchant_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AirtimePurchase">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/AirtimePurchase" message="tns:IZenithRequest_AirtimePurchase_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/AirtimePurchaseResponse" message="tns:IZenithRequest_AirtimePurchase_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BillsPayment">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/BillsPayment" message="tns:IZenithRequest_BillsPayment_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/BillsPaymentResponse" message="tns:IZenithRequest_BillsPayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmPhcnCustomer">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/ConfirmPhcnCustomer" message="tns:IZenithRequest_ConfirmPhcnCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/ConfirmPhcnCustomerResponse" message="tns:IZenithRequest_ConfirmPhcnCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentChannel">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetPaymentChannel" message="tns:IZenithRequest_GetPaymentChannel_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetPaymentChannelResponse" message="tns:IZenithRequest_GetPaymentChannel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetElectricityZone">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetElectricityZone" message="tns:IZenithRequest_GetElectricityZone_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetElectricityZoneResponse" message="tns:IZenithRequest_GetElectricityZone_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PostPhcnPayment">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/PostPhcnPayment" message="tns:IZenithRequest_PostPhcnPayment_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/PostPhcnPaymentResponse" message="tns:IZenithRequest_PostPhcnPayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBankBranch">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetBankBranch" message="tns:IZenithRequest_GetBankBranch_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetBankBranchResponse" message="tns:IZenithRequest_GetBankBranch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomer">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetCustomer" message="tns:IZenithRequest_GetCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetCustomerResponse" message="tns:IZenithRequest_GetCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessDTSVPayment">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/ProcessDTSVPayment" message="tns:IZenithRequest_ProcessDTSVPayment_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/ProcessDTSVPaymentResponse" message="tns:IZenithRequest_ProcessDTSVPayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDstvProduct">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetDstvProduct" message="tns:IZenithRequest_GetDstvProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetDstvProductResponse" message="tns:IZenithRequest_GetDstvProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountNameInquiry">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetAccountNameInquiry" message="tns:IZenithRequest_GetAccountNameInquiry_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetAccountNameInquiryResponse" message="tns:IZenithRequest_GetAccountNameInquiry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCardRecords">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetCardRecords" message="tns:IZenithRequest_GetCardRecords_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetCardRecordsResponse" message="tns:IZenithRequest_GetCardRecords_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeactivateCard">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/DeactivateCard" message="tns:IZenithRequest_DeactivateCard_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/DeactivateCardResponse" message="tns:IZenithRequest_DeactivateCard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActivateCard">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/ActivateCard" message="tns:IZenithRequest_ActivateCard_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/ActivateCardResponse" message="tns:IZenithRequest_ActivateCard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmCheque">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/ConfirmCheque" message="tns:IZenithRequest_ConfirmCheque_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/ConfirmChequeResponse" message="tns:IZenithRequest_ConfirmCheque_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBillers">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetBillers" message="tns:IZenithRequest_GetBillers_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetBillersResponse" message="tns:IZenithRequest_GetBillers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBillersName">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetBillersName" message="tns:IZenithRequest_GetBillersName_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetBillersNameResponse" message="tns:IZenithRequest_GetBillersName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBillersByCategory">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetBillersByCategory" message="tns:IZenithRequest_GetBillersByCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetBillersByCategoryResponse" message="tns:IZenithRequest_GetBillersByCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBillersByID">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetBillersByID" message="tns:IZenithRequest_GetBillersByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetBillersByIDResponse" message="tns:IZenithRequest_GetBillersByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BlockCard">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/BlockCard" message="tns:IZenithRequest_BlockCard_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/BlockCardResponse" message="tns:IZenithRequest_BlockCard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnBlockCard">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/UnBlockCard" message="tns:IZenithRequest_UnBlockCard_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/UnBlockCardResponse" message="tns:IZenithRequest_UnBlockCard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HashPassword">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/HashPassword" message="tns:IZenithRequest_HashPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/HashPasswordResponse" message="tns:IZenithRequest_HashPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ThirdPartyAtmTransfer">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/ThirdPartyAtmTransfer" message="tns:IZenithRequest_ThirdPartyAtmTransfer_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/ThirdPartyAtmTransferResponse" message="tns:IZenithRequest_ThirdPartyAtmTransfer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerLmtATMTransfer">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetCustomerLmtATMTransfer" message="tns:IZenithRequest_GetCustomerLmtATMTransfer_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetCustomerLmtATMTransferResponse" message="tns:IZenithRequest_GetCustomerLmtATMTransfer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerLmtATMTransferByID">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetCustomerLmtATMTransferByID" message="tns:IZenithRequest_GetCustomerLmtATMTransferByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetCustomerLmtATMTransferByIDResponse" message="tns:IZenithRequest_GetCustomerLmtATMTransferByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RecallLmtATMTransferByID">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/RecallLmtATMTransferByID" message="tns:IZenithRequest_RecallLmtATMTransferByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/RecallLmtATMTransferByIDResponse" message="tns:IZenithRequest_RecallLmtATMTransferByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLmtAtmBalance">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetLmtAtmBalance" message="tns:IZenithRequest_GetLmtAtmBalance_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetLmtAtmBalanceResponse" message="tns:IZenithRequest_GetLmtAtmBalance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResendLmtAtmTransferDetail">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/ResendLmtAtmTransferDetail" message="tns:IZenithRequest_ResendLmtAtmTransferDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/ResendLmtAtmTransferDetailResponse" message="tns:IZenithRequest_ResendLmtAtmTransferDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLmtAtmTransactionHistory">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetLmtAtmTransactionHistory" message="tns:IZenithRequest_GetLmtAtmTransactionHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetLmtAtmTransactionHistoryResponse" message="tns:IZenithRequest_GetLmtAtmTransactionHistory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendLmtAtmTransactionHistoryByEmail">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/SendLmtAtmTransactionHistoryByEmail" message="tns:IZenithRequest_SendLmtAtmTransactionHistoryByEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/SendLmtAtmTransactionHistoryByEmailResponse" message="tns:IZenithRequest_SendLmtAtmTransactionHistoryByEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuyQuickAirtime">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/BuyQuickAirtime" message="tns:IZenithRequest_BuyQuickAirtime_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/BuyQuickAirtimeResponse" message="tns:IZenithRequest_BuyQuickAirtime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmMobileAccount">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/ConfirmMobileAccount" message="tns:IZenithRequest_ConfirmMobileAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/ConfirmMobileAccountResponse" message="tns:IZenithRequest_ConfirmMobileAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateMobileRegToken">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/ValidateMobileRegToken" message="tns:IZenithRequest_ValidateMobileRegToken_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/ValidateMobileRegTokenResponse" message="tns:IZenithRequest_ValidateMobileRegToken_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterZMobile">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/RegisterZMobile" message="tns:IZenithRequest_RegisterZMobile_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/RegisterZMobileResponse" message="tns:IZenithRequest_RegisterZMobile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterUSSD">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/RegisterUSSD" message="tns:IZenithRequest_RegisterUSSD_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/RegisterUSSDResponse" message="tns:IZenithRequest_RegisterUSSD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountName">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetAccountName" message="tns:IZenithRequest_GetAccountName_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetAccountNameResponse" message="tns:IZenithRequest_GetAccountName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InitiateReOcurringTransfer">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/InitiateReOcurringTransfer" message="tns:IZenithRequest_InitiateReOcurringTransfer_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/InitiateReOcurringTransferResponse" message="tns:IZenithRequest_InitiateReOcurringTransfer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditReOcurringTransfer">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/EditReOcurringTransfer" message="tns:IZenithRequest_EditReOcurringTransfer_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/EditReOcurringTransferResponse" message="tns:IZenithRequest_EditReOcurringTransfer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StopReOccurringTransfer">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/StopReOccurringTransfer" message="tns:IZenithRequest_StopReOccurringTransfer_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/StopReOccurringTransferResponse" message="tns:IZenithRequest_StopReOccurringTransfer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReOcurringAirtime">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/ReOcurringAirtime" message="tns:IZenithRequest_ReOcurringAirtime_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/ReOcurringAirtimeResponse" message="tns:IZenithRequest_ReOcurringAirtime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StopReOcurringAirtime">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/StopReOcurringAirtime" message="tns:IZenithRequest_StopReOcurringAirtime_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/StopReOcurringAirtimeResponse" message="tns:IZenithRequest_StopReOcurringAirtime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditReOcurringAirtime">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/EditReOcurringAirtime" message="tns:IZenithRequest_EditReOcurringAirtime_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/EditReOcurringAirtimeResponse" message="tns:IZenithRequest_EditReOcurringAirtime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAirtime">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/DeleteAirtime" message="tns:IZenithRequest_DeleteAirtime_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/DeleteAirtimeResponse" message="tns:IZenithRequest_DeleteAirtime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeMobilePassword">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/ChangeMobilePassword" message="tns:IZenithRequest_ChangeMobilePassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/ChangeMobilePasswordResponse" message="tns:IZenithRequest_ChangeMobilePassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeMobilePIN">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/ChangeMobilePIN" message="tns:IZenithRequest_ChangeMobilePIN_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/ChangeMobilePINResponse" message="tns:IZenithRequest_ChangeMobilePIN_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GroupStatementByKeywords">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/GroupStatementByKeywords" message="tns:IZenithRequest_GroupStatementByKeywords_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/GroupStatementByKeywordsResponse" message="tns:IZenithRequest_GroupStatementByKeywords_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetMobilePINRequest">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/ResetMobilePINRequest" message="tns:IZenithRequest_ResetMobilePINRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/ResetMobilePINRequestResponse" message="tns:IZenithRequest_ResetMobilePINRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetMobilePINConfirmation">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/ResetMobilePINConfirmation" message="tns:IZenithRequest_ResetMobilePINConfirmation_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/ResetMobilePINConfirmationResponse" message="tns:IZenithRequest_ResetMobilePINConfirmation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateBeneficiary">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/CreateBeneficiary" message="tns:IZenithRequest_CreateBeneficiary_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/CreateBeneficiaryResponse" message="tns:IZenithRequest_CreateBeneficiary_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditBeneficiary">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/EditBeneficiary" message="tns:IZenithRequest_EditBeneficiary_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/EditBeneficiaryResponse" message="tns:IZenithRequest_EditBeneficiary_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBeneficiary">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/DeleteBeneficiary" message="tns:IZenithRequest_DeleteBeneficiary_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/DeleteBeneficiaryResponse" message="tns:IZenithRequest_DeleteBeneficiary_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBeneficiaries">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetBeneficiaries" message="tns:IZenithRequest_GetBeneficiaries_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetBeneficiariesResponse" message="tns:IZenithRequest_GetBeneficiaries_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetZenithBeneficiaries">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetZenithBeneficiaries" message="tns:IZenithRequest_GetZenithBeneficiaries_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetZenithBeneficiariesResponse" message="tns:IZenithRequest_GetZenithBeneficiaries_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOtherBanksBeneficiaries">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetOtherBanksBeneficiaries" message="tns:IZenithRequest_GetOtherBanksBeneficiaries_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetOtherBanksBeneficiariesResponse" message="tns:IZenithRequest_GetOtherBanksBeneficiaries_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBeneficiariesByName">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetBeneficiariesByName" message="tns:IZenithRequest_GetBeneficiariesByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetBeneficiariesByNameResponse" message="tns:IZenithRequest_GetBeneficiariesByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReoccurringAirtime">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetReoccurringAirtime" message="tns:IZenithRequest_GetReoccurringAirtime_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetReoccurringAirtimeResponse" message="tns:IZenithRequest_GetReoccurringAirtime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReoccurringTransfer">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetReoccurringTransfer" message="tns:IZenithRequest_GetReoccurringTransfer_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetReoccurringTransferResponse" message="tns:IZenithRequest_GetReoccurringTransfer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/SendMessage" message="tns:IZenithRequest_SendMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/SendMessageResponse" message="tns:IZenithRequest_SendMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageCategory">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetMessageCategory" message="tns:IZenithRequest_GetMessageCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetMessageCategoryResponse" message="tns:IZenithRequest_GetMessageCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLoginSession">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetLoginSession" message="tns:IZenithRequest_GetLoginSession_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetLoginSessionResponse" message="tns:IZenithRequest_GetLoginSession_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBillersCategories">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetBillersCategories" message="tns:IZenithRequest_GetBillersCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/GetBillersCategoriesResponse" message="tns:IZenithRequest_GetBillersCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StandingOrderQuery">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/StandingOrderQuery" message="tns:IZenithRequest_StandingOrderQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/StandingOrderQueryResponse" message="tns:IZenithRequest_StandingOrderQuery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MastcardMerchantPay">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/MastcardMerchantPay" message="tns:IZenithRequest_MastcardMerchantPay_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/MastcardMerchantPayResponse" message="tns:IZenithRequest_MastcardMerchantPay_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmTransfer">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/ConfirmTransfer" message="tns:IZenithRequest_ConfirmTransfer_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/ConfirmTransferResponse" message="tns:IZenithRequest_ConfirmTransfer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AccountNumberExist">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/AccountNumberExist" message="tns:IZenithRequest_AccountNumberExist_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/AccountNumberExistResponse" message="tns:IZenithRequest_AccountNumberExist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SoftTokenAuthenticationGen">
+      <wsdl:input wsaw:Action="http://zenithbank.com/core/IZenithRequest/SoftTokenAuthenticationGen" message="tns:IZenithRequest_SoftTokenAuthenticationGen_InputMessage" />
+      <wsdl:output wsaw:Action="http://zenithbank.com/core/IZenithRequest/SoftTokenAuthenticationGenResponse" message="tns:IZenithRequest_SoftTokenAuthenticationGen_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SoapEndpoint" type="tns:IZenithRequest">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConfirmSoftToken">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/ConfirmSoftToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IbankAdditionalDeviceConfirm">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/IbankAdditionalDeviceConfirm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LastTransferConfirmationRequest">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/LastTransferConfirmationRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountCustomerID">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/GetAccountCustomerID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DebitCustomerForIswTransfer">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/DebitCustomerForIswTransfer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNibbsSessionID">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/GetNibbsSessionID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRimAssociateWithAccount">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/GetRimAssociateWithAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDisputedTrans">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/GetDisputedTrans" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDisputedTransStatus">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/GetDisputedTransStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertDisputedTrans">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/InsertDisputedTrans" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccountCreation">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/AccountCreation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserUssdExist">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/UserUssdExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostAirlinePayment">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/PostAirlinePayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryAirlineTransaction">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/QueryAirlineTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostCustomPayment">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/PostCustomPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomBiller">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/GetCustomBiller" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BvnUpdateRequest">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/BvnUpdateRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryAirlineTransByRimNo">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/QueryAirlineTransByRimNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryAirlineTransByDate">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/QueryAirlineTransByDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryBillsPaymentTransactions">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/QueryBillsPaymentTransactions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryZenithTransactions">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/QueryZenithTransactions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateReq">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/AuthenticateReq" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAuthenticationType">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/GetAuthenticationType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAuthenticationType">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/CreateAuthenticationType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpeningBalance">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/OpeningBalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountDetail">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/GetAccountDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendAccountBalance">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/SendAccountBalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountStatement">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/GetAccountStatement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransferGetAccountSummaries">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/TransferGetAccountSummaries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountSummaries">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/GetAccountSummaries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMinistatement">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/GetMinistatement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendStatementByEmail">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/SendStatementByEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StopCheque">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/StopCheque" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestChequeBook">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/RequestChequeBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transfer">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/Transfer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FundTransferONUS">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/FundTransferONUS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThirdPartyTransferOtherBank">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/ThirdPartyTransferOtherBank" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThirdPartyTransferOtherBankConfirm">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/ThirdPartyTransferOtherBankConfirm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThirdPartyLocalMoneyTransfer">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/ThirdPartyLocalMoneyTransfer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAirtimemerchant">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/GetAirtimemerchant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AirtimePurchase">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/AirtimePurchase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BillsPayment">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/BillsPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmPhcnCustomer">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/ConfirmPhcnCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentChannel">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/GetPaymentChannel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetElectricityZone">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/GetElectricityZone" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostPhcnPayment">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/PostPhcnPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBankBranch">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/GetBankBranch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomer">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/GetCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessDTSVPayment">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/ProcessDTSVPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDstvProduct">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/GetDstvProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountNameInquiry">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/GetAccountNameInquiry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardRecords">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/GetCardRecords" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeactivateCard">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/DeactivateCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivateCard">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/ActivateCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmCheque">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/ConfirmCheque" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBillers">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/GetBillers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBillersName">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/GetBillersName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBillersByCategory">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/GetBillersByCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBillersByID">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/GetBillersByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BlockCard">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/BlockCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnBlockCard">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/UnBlockCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HashPassword">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/HashPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThirdPartyAtmTransfer">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/ThirdPartyAtmTransfer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerLmtATMTransfer">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/GetCustomerLmtATMTransfer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerLmtATMTransferByID">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/GetCustomerLmtATMTransferByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecallLmtATMTransferByID">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/RecallLmtATMTransferByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLmtAtmBalance">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/GetLmtAtmBalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResendLmtAtmTransferDetail">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/ResendLmtAtmTransferDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLmtAtmTransactionHistory">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/GetLmtAtmTransactionHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendLmtAtmTransactionHistoryByEmail">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/SendLmtAtmTransactionHistoryByEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuyQuickAirtime">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/BuyQuickAirtime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmMobileAccount">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/ConfirmMobileAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateMobileRegToken">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/ValidateMobileRegToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterZMobile">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/RegisterZMobile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterUSSD">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/RegisterUSSD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountName">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/GetAccountName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InitiateReOcurringTransfer">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/InitiateReOcurringTransfer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditReOcurringTransfer">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/EditReOcurringTransfer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StopReOccurringTransfer">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/StopReOccurringTransfer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReOcurringAirtime">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/ReOcurringAirtime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StopReOcurringAirtime">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/StopReOcurringAirtime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditReOcurringAirtime">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/EditReOcurringAirtime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAirtime">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/DeleteAirtime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeMobilePassword">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/ChangeMobilePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeMobilePIN">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/ChangeMobilePIN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GroupStatementByKeywords">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/GroupStatementByKeywords" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetMobilePINRequest">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/ResetMobilePINRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetMobilePINConfirmation">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/ResetMobilePINConfirmation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateBeneficiary">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/CreateBeneficiary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditBeneficiary">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/EditBeneficiary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBeneficiary">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/DeleteBeneficiary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBeneficiaries">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/GetBeneficiaries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetZenithBeneficiaries">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/GetZenithBeneficiaries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOtherBanksBeneficiaries">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/GetOtherBanksBeneficiaries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBeneficiariesByName">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/GetBeneficiariesByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReoccurringAirtime">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/GetReoccurringAirtime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReoccurringTransfer">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/GetReoccurringTransfer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/SendMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageCategory">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/GetMessageCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLoginSession">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/GetLoginSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBillersCategories">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/GetBillersCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StandingOrderQuery">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/StandingOrderQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MastcardMerchantPay">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/MastcardMerchantPay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmTransfer">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/ConfirmTransfer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccountNumberExist">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/AccountNumberExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SoftTokenAuthenticationGen">
+      <soap:operation soapAction="http://zenithbank.com/core/IZenithRequest/SoftTokenAuthenticationGen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ZenithRequest">
+    <wsdl:port name="SoapEndpoint" binding="tns:SoapEndpoint">
+      <soap:address location="http://172.29.30.40/ZenithCoreService/ZenithCore.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

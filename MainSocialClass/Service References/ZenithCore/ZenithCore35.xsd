@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://zenithbank.com/core.pymtchannelresp" elementFormDefault="qualified" targetNamespace="http://zenithbank.com/core.pymtchannelresp" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd33" namespace="http://zenithbank.com/core.paymentchannel" />
+  <xs:complexType name="ChannelResp">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://zenithbank.com/core.paymentchannel" minOccurs="0" name="Channels" nillable="true" type="q1:ArrayOfChannel" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResponseCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ChannelResp" nillable="true" type="tns:ChannelResp" />
+</xs:schema>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://zenithbank.com/core.TransferAtm" elementFormDefault="qualified" targetNamespace="http://zenithbank.com/core.TransferAtm" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd52" namespace="http://zenithbank.com/core.AmtTransfer" />
+  <xs:complexType name="ArrayOfThirdPartyTransferATM">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ThirdPartyTransferATM" nillable="true" type="tns:ThirdPartyTransferATM" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfThirdPartyTransferATM" nillable="true" type="tns:ArrayOfThirdPartyTransferATM" />
+  <xs:complexType name="ThirdPartyTransferATM">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://zenithbank.com/core.AmtTransfer" base="q1:ThirdPartyAmtTransfer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Balance" type="xs:decimal" />
+          <xs:element minOccurs="0" name="CreateDt" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ID" type="xs:decimal" />
+          <xs:element minOccurs="0" name="PIN" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Reference" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ThirdPartyTransferATM" nillable="true" type="tns:ThirdPartyTransferATM" />
+</xs:schema>

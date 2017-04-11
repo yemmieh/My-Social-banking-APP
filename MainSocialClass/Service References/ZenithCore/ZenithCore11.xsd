@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://zenithbank.com/core.ReOcurringTransferResp" elementFormDefault="qualified" targetNamespace="http://zenithbank.com/core.ReOcurringTransferResp" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd60" namespace="http://zenithbank.com/core.ReOccurTransfer" />
+  <xs:complexType name="ReOcurringTransferResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResponseCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://zenithbank.com/core.ReOccurTransfer" minOccurs="0" name="StandingTransferOrders" nillable="true" type="q1:ArrayOfReOccuringTransfer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReOcurringTransferResponse" nillable="true" type="tns:ReOcurringTransferResponse" />
+</xs:schema>

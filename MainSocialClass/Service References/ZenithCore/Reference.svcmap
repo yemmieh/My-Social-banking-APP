@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5bf7025c-4253-4a27-9532-d274bc51e65f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://172.29.30.40/ZenithCoreService/ZenithCore.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ZenithCore.xsd" MetadataType="Schema" ID="503e3cd9-fa99-48d7-bb53-58a22f522a8f" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd40" />
+    <MetadataFile FileName="ZenithCore1.xsd" MetadataType="Schema" ID="fd49a05f-6ca8-4130-a35d-1ce21b468c86" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd17" />
+    <MetadataFile FileName="ZenithCore2.xsd" MetadataType="Schema" ID="35d6acc1-71b3-45bc-ad7f-3fdfb444ca4e" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd60" />
+    <MetadataFile FileName="ZenithCore3.xsd" MetadataType="Schema" ID="48df4e4a-7e56-4f8d-ba05-3a51ba742093" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd10" />
+    <MetadataFile FileName="ZenithCore4.xsd" MetadataType="Schema" ID="d19541f4-7d03-4feb-a7df-33f5db83e27d" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd27" />
+    <MetadataFile FileName="ZenithCore5.xsd" MetadataType="Schema" ID="00536ed8-6d58-486b-b62f-632c8fb827de" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd30" />
+    <MetadataFile FileName="ZenithCore6.xsd" MetadataType="Schema" ID="c2966c2f-55d8-4053-987c-af614f52523e" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd20" />
+    <MetadataFile FileName="ZenithCore7.xsd" MetadataType="Schema" ID="78183edf-ed23-4f95-b415-75cf0721edf4" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd71" />
+    <MetadataFile FileName="ZenithCore8.xsd" MetadataType="Schema" ID="be7b4331-e887-4e3e-a586-afa8c9623fb9" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd74" />
+    <MetadataFile FileName="ZenithCore9.xsd" MetadataType="Schema" ID="83a0216b-e28e-42ce-b63d-47a05f3904ef" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd63" />
+    <MetadataFile FileName="ZenithCore10.xsd" MetadataType="Schema" ID="dfa3cf5c-d374-4d48-98c3-5abe589f47d4" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd31" />
+    <MetadataFile FileName="ZenithCore11.xsd" MetadataType="Schema" ID="0274ea77-3a7b-4d37-b5ff-fb24cee8d5f0" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd68" />
+    <MetadataFile FileName="ZenithCore12.xsd" MetadataType="Schema" ID="cfb13be2-c43c-42c0-8c0d-674ce7620aee" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd8" />
+    <MetadataFile FileName="ZenithCore13.xsd" MetadataType="Schema" ID="b0ee7036-a5be-4526-8d33-c243ecd3683b" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd56" />
+    <MetadataFile FileName="ZenithCore14.xsd" MetadataType="Schema" ID="10c3a176-741a-48ab-8070-1db8f2a18091" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd28" />
+    <MetadataFile FileName="ZenithCore15.xsd" MetadataType="Schema" ID="49e9857f-a4a6-4f46-92d5-eb8ce8e4ad95" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd64" />
+    <MetadataFile FileName="ZenithCore16.xsd" MetadataType="Schema" ID="e6ffaa5b-b94a-42ad-8b39-d1efc45244f4" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd72" />
+    <MetadataFile FileName="ZenithCore17.xsd" MetadataType="Schema" ID="6bb29e29-07a4-4644-91d5-87a4acf3d87a" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd5" />
+    <MetadataFile FileName="ZenithCore18.xsd" MetadataType="Schema" ID="dcf993fd-c46b-423a-8983-707320f7439d" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd4" />
+    <MetadataFile FileName="ZenithCore19.xsd" MetadataType="Schema" ID="a8d3a95b-1ce0-4776-93f1-33d96a9faf5a" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd52" />
+    <MetadataFile FileName="ZenithCore20.xsd" MetadataType="Schema" ID="24b2de03-9a12-4e35-81bd-f709d57cd69f" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd6" />
+    <MetadataFile FileName="ZenithCore21.xsd" MetadataType="Schema" ID="b1d2f9a7-554e-425d-85e5-079fab6154a2" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd1" />
+    <MetadataFile FileName="ZenithCore22.xsd" MetadataType="Schema" ID="436cb0a2-792e-4460-80ad-d7d8c96070eb" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd0" />
+    <MetadataFile FileName="ZenithCore23.xsd" MetadataType="Schema" ID="b32f0a10-61ea-447e-867d-46048354a80c" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd3" />
+    <MetadataFile FileName="ZenithCore24.xsd" MetadataType="Schema" ID="03e6d60f-3377-4a23-b4fd-2402b6734b7a" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd2" />
+    <MetadataFile FileName="ZenithCore25.xsd" MetadataType="Schema" ID="b3d4798b-d4a3-41a3-a07f-bc0eb0636879" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd54" />
+    <MetadataFile FileName="ZenithCore26.xsd" MetadataType="Schema" ID="26c42fc4-993a-44f2-a4ef-11b2809ae4cb" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd44" />
+    <MetadataFile FileName="ZenithCore27.xsd" MetadataType="Schema" ID="ea38f95b-d69d-4c01-ba83-1b4a45f14889" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd51" />
+    <MetadataFile FileName="ZenithCore28.xsd" MetadataType="Schema" ID="bc8157a6-1bca-4039-a85d-f2c15ed2ee09" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd41" />
+    <MetadataFile FileName="ZenithCore29.xsd" MetadataType="Schema" ID="966a36d6-3dff-4467-a0f1-ec0e7a47a459" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd14" />
+    <MetadataFile FileName="ZenithCore30.xsd" MetadataType="Schema" ID="41bddd83-b66e-49c3-b0fa-98c1540c1085" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd61" />
+    <MetadataFile FileName="ZenithCore31.xsd" MetadataType="Schema" ID="43d9e687-f289-40cb-88a7-e0519a00a13d" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd11" />
+    <MetadataFile FileName="ZenithCore32.xsd" MetadataType="Schema" ID="4fde6965-d538-4c3e-952c-aeec290577c2" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd24" />
+    <MetadataFile FileName="ZenithCore33.xsd" MetadataType="Schema" ID="66675937-f252-4b64-97c1-16ae3a126307" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd12" />
+    <MetadataFile FileName="ZenithCore34.xsd" MetadataType="Schema" ID="991b68a5-d80a-440e-829a-467004ac073c" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd21" />
+    <MetadataFile FileName="ZenithCore35.xsd" MetadataType="Schema" ID="47bf5447-fe48-49b3-9fb7-dccdb43466a1" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd32" />
+    <MetadataFile FileName="ZenithCore36.xsd" MetadataType="Schema" ID="4b54b2b4-3d1f-4099-a6a7-855a421d37ac" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd22" />
+    <MetadataFile FileName="ZenithCore37.xsd" MetadataType="Schema" ID="17def235-b2c7-49fc-be6c-eaf6d927dde5" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd7" />
+    <MetadataFile FileName="ZenithCore38.xsd" MetadataType="Schema" ID="8fad16ea-bda9-4aee-abc5-2b32f1b5795d" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd29" />
+    <MetadataFile FileName="ZenithCore39.xsd" MetadataType="Schema" ID="472b7a4f-7eb4-411a-8425-faf5492cb72c" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd65" />
+    <MetadataFile FileName="ZenithRequest.wsdl" MetadataType="Wsdl" ID="e322ff1b-eade-47f0-b223-fc3a7ca558ff" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?wsdl" />
+    <MetadataFile FileName="ZenithCore40.xsd" MetadataType="Schema" ID="a80ce3d4-9888-4ac4-b53d-6755b8f35d02" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd37" />
+    <MetadataFile FileName="ZenithCore41.xsd" MetadataType="Schema" ID="fc55df1f-e90a-406e-9838-0eb0319330a2" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd73" />
+    <MetadataFile FileName="ZenithCore42.xsd" MetadataType="Schema" ID="5a1a7b11-9f0b-49f3-b42b-99e6303c0015" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd70" />
+    <MetadataFile FileName="ZenithCore43.xsd" MetadataType="Schema" ID="d87f80ae-a181-41c0-b1b9-60e24cadb260" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd58" />
+    <MetadataFile FileName="ZenithCore44.xsd" MetadataType="Schema" ID="51e7debe-eb35-4648-a576-1e6853d25bd3" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd9" />
+    <MetadataFile FileName="ZenithCore45.xsd" MetadataType="Schema" ID="baaebbd8-c628-49ad-8c09-4f3f3e9c4633" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd48" />
+    <MetadataFile FileName="ZenithCore46.xsd" MetadataType="Schema" ID="f31e561d-4fad-48b6-a89f-c63b2993ba9a" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd55" />
+    <MetadataFile FileName="ZenithCore47.xsd" MetadataType="Schema" ID="d26f2716-a48b-45a9-90f0-6e9fd0a14fc7" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd45" />
+    <MetadataFile FileName="ZenithCore48.xsd" MetadataType="Schema" ID="64270e14-0dce-41fd-92e6-c30617e7e054" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd18" />
+    <MetadataFile FileName="ZenithCore49.xsd" MetadataType="Schema" ID="92057abf-9a0d-49d1-aa1b-3b4ecd9c7bae" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd46" />
+    <MetadataFile FileName="ZenithCore50.xsd" MetadataType="Schema" ID="c401607c-583f-406e-ac2e-b943e7b97266" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd53" />
+    <MetadataFile FileName="ZenithCore51.xsd" MetadataType="Schema" ID="72a0aa9f-cfb8-4f09-ac51-9f02be4fe222" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd43" />
+    <MetadataFile FileName="ZenithCore52.xsd" MetadataType="Schema" ID="7aebead3-edc2-40c2-9271-2eac33db09ce" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd16" />
+    <MetadataFile FileName="ZenithCore53.xsd" MetadataType="Schema" ID="073c1005-c135-4d4f-81f8-20d27d02859a" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd25" />
+    <MetadataFile FileName="ZenithCore54.xsd" MetadataType="Schema" ID="7d69fc6e-ccce-4406-9e0f-f6863a4b3325" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd13" />
+    <MetadataFile FileName="ZenithCore55.xsd" MetadataType="Schema" ID="669c0c89-966d-4065-bd13-3944bd1af126" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd26" />
+    <MetadataFile FileName="ZenithCore56.xsd" MetadataType="Schema" ID="e65e3bcd-b579-49d6-88d4-421f9bb9130c" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd33" />
+    <MetadataFile FileName="ZenithCore57.xsd" MetadataType="Schema" ID="eb27e796-a4f4-43b8-b76f-2066ea89d6b8" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd23" />
+    <MetadataFile FileName="ZenithCore58.xsd" MetadataType="Schema" ID="3499ca2e-f562-43aa-a989-2e612a7c27ec" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd38" />
+    <MetadataFile FileName="ZenithCore59.xsd" MetadataType="Schema" ID="30b72856-4f07-477e-be53-3d61fabfa96c" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd66" />
+    <MetadataFile FileName="ZenithCore60.xsd" MetadataType="Schema" ID="394f35fb-6430-4a24-b4ed-06fb7fc31b8e" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd34" />
+    <MetadataFile FileName="ZenithCore.disco" MetadataType="Disco" ID="9ef921c9-e2a5-4262-90c9-86a308990b87" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?disco" />
+    <MetadataFile FileName="ZenithCore61.xsd" MetadataType="Schema" ID="8c0918cf-64af-4577-bc3a-052e8caf23e5" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd59" />
+    <MetadataFile FileName="ZenithCore62.xsd" MetadataType="Schema" ID="f8b58fd5-060f-49d1-8ed5-38ab64876265" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd42" />
+    <MetadataFile FileName="ZenithCore63.xsd" MetadataType="Schema" ID="4445b4b1-9375-46a5-bf4a-e6f86f2f5676" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd62" />
+    <MetadataFile FileName="ZenithCore.wsdl" MetadataType="Wsdl" ID="1911fcdb-605e-44e7-b0ce-8f335cdb7bc2" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="ZenithCore64.xsd" MetadataType="Schema" ID="572fe013-ff0e-4a25-9597-d7bbd71c025d" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd19" />
+    <MetadataFile FileName="ZenithCore65.xsd" MetadataType="Schema" ID="199b3a65-cc5c-4f4c-a1e8-e605a809bed9" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd39" />
+    <MetadataFile FileName="ZenithCore66.xsd" MetadataType="Schema" ID="596511d6-4b9c-40fa-aa0c-6d76eccf3474" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd75" />
+    <MetadataFile FileName="ZenithCore67.xsd" MetadataType="Schema" ID="ad3eec5c-7d5e-4ad7-9b17-4a20b7706a3a" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd67" />
+    <MetadataFile FileName="ZenithCore68.xsd" MetadataType="Schema" ID="85af18ad-2fed-4b79-bed5-b7e2760a2ef4" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd36" />
+    <MetadataFile FileName="ZenithCore69.xsd" MetadataType="Schema" ID="3c331ed7-0eb7-436a-aa3f-c6be8593eabd" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd15" />
+    <MetadataFile FileName="ZenithCore70.xsd" MetadataType="Schema" ID="f3bc2dbc-ba0e-4531-b3df-4dccb90fa928" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd49" />
+    <MetadataFile FileName="ZenithCore71.xsd" MetadataType="Schema" ID="b4516576-0ba8-4d7d-8203-0f7bd3a080cd" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd35" />
+    <MetadataFile FileName="ZenithCore72.xsd" MetadataType="Schema" ID="f269f336-36ff-416b-a33f-45fe21225b4f" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd69" />
+    <MetadataFile FileName="ZenithCore73.xsd" MetadataType="Schema" ID="caa0fbd8-babb-4530-bcb3-243c5532fb2a" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd57" />
+    <MetadataFile FileName="ZenithCore74.xsd" MetadataType="Schema" ID="c5400472-f86b-4c8d-abc5-c423eb7b7705" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd47" />
+    <MetadataFile FileName="ZenithCore75.xsd" MetadataType="Schema" ID="74c1783a-00e7-4b23-94c0-600f9a5131b9" SourceId="1" SourceUrl="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd50" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,1700 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://zenithbank.com/core" elementFormDefault="qualified" targetNamespace="http://zenithbank.com/core" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd2" namespace="http://zenithbank.com/core.clientauth" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd3" namespace="http://zenithbank.com/core.customerauth" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd4" namespace="http://zenithbank.com/core.response" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/com.zenith.zcore.library" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd7" namespace="http://zenithbank.com/core.accountreq" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd8" namespace="http://zenithbank.com/core.authreq" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd9" namespace="http://zenithbank.com/core.authtypeReq" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd10" namespace="http://zenithbank.com/core.balance" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd11" namespace="http://zenithbank.com/core.acctdetail" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd12" namespace="http://zenithbank.com/core.quickacctsum" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd13" namespace="http://zenithbank.com/core.stmtreq" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd14" namespace="http://zenithbank.com/core.stmtresp" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd16" namespace="http://zenithbank.com/core.accountsumreq" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd17" namespace="http://zenithbank.com/core.accountsumresp" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd19" namespace="http://zenithbank.com/core.stmtmail" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd20" namespace="http://zenithbank.com/core.stopchq" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd21" namespace="http://zenithbank.com/core.chkreq" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd22" namespace="http://zenithbank.com/core.trf" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd23" namespace="http://zenithbank.com/core.ZenithTransfer" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd24" namespace="http://zenithbank.com/core.ThirdPartyTransfer" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd25" namespace="http://zenithbank.com/core.TransferThirdParty" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd26" namespace="http://zenithbank.com/core.airtelmerchantresp" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd28" namespace="http://zenithbank.com/core.airtimepurchase" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd29" namespace="http://zenithbank.com/core.billpayment" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd30" namespace="http://zenithbank.com/core.phcnreq" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd31" namespace="http://zenithbank.com/core.phcnConfirm" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd32" namespace="http://zenithbank.com/core.pymtchannelresp" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd34" namespace="http://zenithbank.com/core.zoneresp" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd36" namespace="http://zenithbank.com/core.phcnpayment" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd37" namespace="http://zenithbank.com/core.branch" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd38" namespace="http://zenithbank.com/core.dstvCustResp" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd40" namespace="http://zenithbank.com/core.dstvPayment" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd41" namespace="http://zenithbank.com/core.dstvproductResp" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd43" namespace="http://zenithbank.com/core.nameInquiry" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd44" namespace="http://zenithbank.com/core.nameinquiryResp" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd45" namespace="http://zenithbank.com/core.cardResp" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd47" namespace="http://zenithbank.com/core.carddetail" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd48" namespace="http://zenithbank.com/core.billerResp" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd51" namespace="http://zenithbank.com/core.CategoryReq" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd52" namespace="http://zenithbank.com/core.AmtTransfer" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd53" namespace="http://zenithbank.com/core.lmtQuery" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd54" namespace="http://zenithbank.com/core.lmtQueryResp" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd56" namespace="http://zenithbank.com/core.lmtQueryById" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd57" namespace="http://zenithbank.com/core.maccount" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd58" namespace="http://zenithbank.com/core.mobileConfirmation" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd59" namespace="http://zenithbank.com/core.mRegistration" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd60" namespace="http://zenithbank.com/core.ReOccurTransfer" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd61" namespace="http://zenithbank.com/core.StandingOrderAirtime" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd62" namespace="http://zenithbank.com/core.PinReset" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd63" namespace="http://zenithbank.com/core.beneficiaryReq" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd65" namespace="http://zenithbank.com/core.beneficiaryResp" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd66" namespace="http://zenithbank.com/core.ReOccurListReq" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd67" namespace="http://zenithbank.com/core.ReOcurringAirtimeResp" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd68" namespace="http://zenithbank.com/core.ReOcurringTransferResp" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd69" namespace="http://zenithbank.com/core.MessageCategory" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd70" namespace="http://zenithbank.com/core.CategoryResp" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd72" namespace="http://zenithbank.com/core.StandOrderEnq" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd73" namespace="http://zenithbank.com/core.orderResult" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd75" namespace="http://zenithbank.com/core.ConfirmReq" />
+  <xs:element name="ConfirmSoftToken">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="req" nillable="true" type="tns:SoftTokenConfirmation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="SoftTokenConfirmation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://zenithbank.com/core.clientauth" minOccurs="0" name="ClientAuth" nillable="true" type="q1:Client" />
+      <xs:element xmlns:q2="http://zenithbank.com/core.customerauth" minOccurs="0" name="CustomerAuth" nillable="true" type="q2:CustomerAuth" />
+      <xs:element minOccurs="0" name="IsUssd" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="SoftwareToken" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SoftTokenConfirmation" nillable="true" type="tns:SoftTokenConfirmation" />
+  <xs:element name="ConfirmSoftTokenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://zenithbank.com/core.response" minOccurs="0" name="ConfirmSoftTokenResult" nillable="true" type="q3:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IbankAdditionalDeviceConfirm">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/com.zenith.zcore.library" minOccurs="0" name="req" nillable="true" type="q4:AdditionalDeviceIbank" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IbankAdditionalDeviceConfirmResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://zenithbank.com/core.response" minOccurs="0" name="IbankAdditionalDeviceConfirmResult" nillable="true" type="q5:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LastTransferConfirmationRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="req" nillable="true" type="tns:LastTransferConfirmation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="LastTransferConfirmation">
+    <xs:sequence>
+      <xs:element xmlns:q6="http://zenithbank.com/core.clientauth" minOccurs="0" name="ClientAuth" nillable="true" type="q6:Client" />
+      <xs:element minOccurs="0" name="DebitAccountNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LastTransferConfirmation" nillable="true" type="tns:LastTransferConfirmation" />
+  <xs:element name="LastTransferConfirmationRequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://zenithbank.com/core.response" minOccurs="0" name="LastTransferConfirmationRequestResult" nillable="true" type="q7:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccountCustomerID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="req" nillable="true" type="tns:MobileConfirmationReq" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="MobileConfirmationReq">
+    <xs:sequence>
+      <xs:element xmlns:q8="http://zenithbank.com/core.clientauth" minOccurs="0" name="ClientAuth" nillable="true" type="q8:Client" />
+      <xs:element minOccurs="0" name="MobileNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MobileConfirmationReq" nillable="true" type="tns:MobileConfirmationReq" />
+  <xs:element name="GetAccountCustomerIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetAccountCustomerIDResult" nillable="true" type="q9:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DebitCustomerForIswTransfer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/com.zenith.zcore.library" minOccurs="0" name="IswTransferDetail" nillable="true" type="q10:InterswitchTransfer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DebitCustomerForIswTransferResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://zenithbank.com/core.response" minOccurs="0" name="DebitCustomerForIswTransferResult" nillable="true" type="q11:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNibbsSessionID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="req" nillable="true" type="tns:NipSessionReq" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="NipSessionReq">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BankCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q12="http://zenithbank.com/core.clientauth" minOccurs="0" name="ClientAuth" nillable="true" type="q12:Client" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NipSessionReq" nillable="true" type="tns:NipSessionReq" />
+  <xs:element name="GetNibbsSessionIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://zenithbank.com/core.response" minOccurs="0" name="GetNibbsSessionIDResult" nillable="true" type="q13:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRimAssociateWithAccount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://zenithbank.com/core.accountreq" minOccurs="0" name="req" nillable="true" type="q14:AccountRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRimAssociateWithAccountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://zenithbank.com/core.response" minOccurs="0" name="GetRimAssociateWithAccountResult" nillable="true" type="q15:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDisputedTrans">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="req" nillable="true" type="tns:DispenseReq" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="DispenseReq">
+    <xs:sequence>
+      <xs:element xmlns:q16="http://zenithbank.com/core.clientauth" minOccurs="0" name="ClientAuth" nillable="true" type="q16:Client" />
+      <xs:element minOccurs="0" name="QueryParam" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Transdate" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DispenseReq" nillable="true" type="tns:DispenseReq" />
+  <xs:element name="GetDisputedTransResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDisputedTransResult" nillable="true" type="tns:ArrayOfDispenseErrorResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfDispenseErrorResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DispenseErrorResponse" nillable="true" type="tns:DispenseErrorResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDispenseErrorResponse" nillable="true" type="tns:ArrayOfDispenseErrorResponse" />
+  <xs:complexType name="DispenseErrorResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="acct_no" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="create_dt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pan" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ptid" type="xs:double" />
+      <xs:element minOccurs="0" name="response_code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="retrieval_ref_no" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="sys_trace_audit_no" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="terminal_id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="terminal_loc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tran_type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="trans_amt" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DispenseErrorResponse" nillable="true" type="tns:DispenseErrorResponse" />
+  <xs:element name="GetDisputedTransStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="req" nillable="true" type="tns:DisputeStatus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="DisputeStatus">
+    <xs:sequence>
+      <xs:element xmlns:q17="http://zenithbank.com/core.clientauth" minOccurs="0" name="ClientAuth" nillable="true" type="q17:Client" />
+      <xs:element minOccurs="0" name="RimNo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DisputeStatus" nillable="true" type="tns:DisputeStatus" />
+  <xs:element name="GetDisputedTransStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDisputedTransStatusResult" nillable="true" type="tns:ArrayOfDispenseErrorQueryResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfDispenseErrorQueryResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DispenseErrorQueryResponse" nillable="true" type="tns:DispenseErrorQueryResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDispenseErrorQueryResponse" nillable="true" type="tns:ArrayOfDispenseErrorQueryResponse" />
+  <xs:complexType name="DispenseErrorQueryResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Contact" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IssuerSTAN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Location" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Pan" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Response" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TerminalID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Transdt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="acct_no" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tran_nr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tran_type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DispenseErrorQueryResponse" nillable="true" type="tns:DispenseErrorQueryResponse" />
+  <xs:element name="InsertDisputedTrans">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="req" nillable="true" type="tns:DispenseRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="DispenseRequest">
+    <xs:sequence>
+      <xs:element xmlns:q18="http://zenithbank.com/core.clientauth" minOccurs="0" name="ClientAuth" nillable="true" type="q18:Client" />
+      <xs:element minOccurs="0" name="DispenseRequests" nillable="true" type="tns:ArrayOfDispenseErrorRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DispenseRequest" nillable="true" type="tns:DispenseRequest" />
+  <xs:complexType name="ArrayOfDispenseErrorRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DispenseErrorRequest" nillable="true" type="tns:DispenseErrorRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDispenseErrorRequest" nillable="true" type="tns:ArrayOfDispenseErrorRequest" />
+  <xs:complexType name="DispenseErrorRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="App" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Contact" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Rim_no" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ptid" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DispenseErrorRequest" nillable="true" type="tns:DispenseErrorRequest" />
+  <xs:element name="InsertDisputedTransResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertDisputedTransResult" nillable="true" type="tns:InsertDisputeResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="InsertDisputeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResponseCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResponseMessage" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InsertDisputeResponse" nillable="true" type="tns:InsertDisputeResponse" />
+  <xs:element name="AccountCreation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/com.zenith.zcore.library" minOccurs="0" name="req" nillable="true" type="q19:QuickAccount" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AccountCreationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://zenithbank.com/core.response" minOccurs="0" name="AccountCreationResult" nillable="true" type="q20:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserUssdExist">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="req" nillable="true" type="tns:MobileConfirmationReq" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserUssdExistResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://zenithbank.com/core.response" minOccurs="0" name="UserUssdExistResult" nillable="true" type="q21:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostAirlinePayment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/com.zenith.zcore.library" minOccurs="0" name="payment" nillable="true" type="q22:AirlinePayment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostAirlinePaymentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://zenithbank.com/core.response" minOccurs="0" name="PostAirlinePaymentResult" nillable="true" type="q23:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryAirlineTransaction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/com.zenith.zcore.library" minOccurs="0" name="queryReq" nillable="true" type="q24:AirlineQuery" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryAirlineTransactionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/com.zenith.zcore.library" minOccurs="0" name="QueryAirlineTransactionResult" nillable="true" type="q25:AirlineQueryResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostCustomPayment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/com.zenith.zcore.library" minOccurs="0" name="payment" nillable="true" type="q26:CustomBillPayment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostCustomPaymentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://zenithbank.com/core.response" minOccurs="0" name="PostCustomPaymentResult" nillable="true" type="q27:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomBiller">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/com.zenith.zcore.library" minOccurs="0" name="BillerQuery" nillable="true" type="q28:BillerQuery" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomBillerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://zenithbank.com/core.response" minOccurs="0" name="GetCustomBillerResult" nillable="true" type="q29:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BvnUpdateRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/com.zenith.zcore.library" minOccurs="0" name="BvmReq" nillable="true" type="q30:BVNRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BvnUpdateRequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://zenithbank.com/core.response" minOccurs="0" name="BvnUpdateRequestResult" nillable="true" type="q31:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryAirlineTransByRimNo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/com.zenith.zcore.library" minOccurs="0" name="QueryAirlineReq" nillable="true" type="q32:QueryAirlineByRimNo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryAirlineTransByRimNoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/com.zenith.zcore.library" minOccurs="0" name="QueryAirlineTransByRimNoResult" nillable="true" type="q33:AirLineReportResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryAirlineTransByDate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/com.zenith.zcore.library" minOccurs="0" name="QueryAirlineReq" nillable="true" type="q34:QueryAirlineByDate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryAirlineTransByDateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/com.zenith.zcore.library" minOccurs="0" name="QueryAirlineTransByDateResult" nillable="true" type="q35:AirLineReportResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryBillsPaymentTransactions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/com.zenith.zcore.library" minOccurs="0" name="billspaymentReq" nillable="true" type="q36:BillsPaymentRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryBillsPaymentTransactionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/com.zenith.zcore.library" minOccurs="0" name="QueryBillsPaymentTransactionsResult" nillable="true" type="q37:BillsPaymentResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryZenithTransactions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/com.zenith.zcore.library" minOccurs="0" name="TranReq" nillable="true" type="q38:QueryTransReq" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryZenithTransactionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://zenithbank.com/core.response" minOccurs="0" name="QueryZenithTransactionsResult" nillable="true" type="q39:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AuthenticateReq">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://zenithbank.com/core.authreq" minOccurs="0" name="req" nillable="true" type="q40:AuthenticateReq" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AuthenticateReqResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://zenithbank.com/core.response" minOccurs="0" name="AuthenticateReqResult" nillable="true" type="q41:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAuthenticationType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://zenithbank.com/core.accountreq" minOccurs="0" name="req" nillable="true" type="q42:AccountRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAuthenticationTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://zenithbank.com/core.response" minOccurs="0" name="GetAuthenticationTypeResult" nillable="true" type="q43:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateAuthenticationType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://zenithbank.com/core.authtypeReq" minOccurs="0" name="req" nillable="true" type="q44:AuthTypeReq" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateAuthenticationTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://zenithbank.com/core.response" minOccurs="0" name="CreateAuthenticationTypeResult" nillable="true" type="q45:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OpeningBalance">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://zenithbank.com/core.accountreq" minOccurs="0" name="req" nillable="true" type="q46:AccountRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OpeningBalanceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://zenithbank.com/core.balance" minOccurs="0" name="OpeningBalanceResult" nillable="true" type="q47:BalanceResp" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccountDetail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://zenithbank.com/core.accountreq" minOccurs="0" name="request" nillable="true" type="q48:AccountRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccountDetailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://zenithbank.com/core.acctdetail" minOccurs="0" name="GetAccountDetailResult" nillable="true" type="q49:AccountDetail" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendAccountBalance">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://zenithbank.com/core.quickacctsum" minOccurs="0" name="request" nillable="true" type="q50:QuickAccountBalance" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendAccountBalanceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://zenithbank.com/core.response" minOccurs="0" name="SendAccountBalanceResult" nillable="true" type="q51:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccountStatement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://zenithbank.com/core.stmtreq" minOccurs="0" name="req" nillable="true" type="q52:StatementReq" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccountStatementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://zenithbank.com/core.stmtresp" minOccurs="0" name="GetAccountStatementResult" nillable="true" type="q53:StatementResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TransferGetAccountSummaries">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://zenithbank.com/core.accountsumreq" minOccurs="0" name="req" nillable="true" type="q54:AccountSummaryRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TransferGetAccountSummariesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://zenithbank.com/core.accountsumresp" minOccurs="0" name="TransferGetAccountSummariesResult" nillable="true" type="q55:AccountSummaryResp" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccountSummaries">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://zenithbank.com/core.accountsumreq" minOccurs="0" name="req" nillable="true" type="q56:AccountSummaryRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccountSummariesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://zenithbank.com/core.accountsumresp" minOccurs="0" name="GetAccountSummariesResult" nillable="true" type="q57:AccountSummaryResp" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMinistatement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://zenithbank.com/core.accountreq" minOccurs="0" name="req" nillable="true" type="q58:AccountRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMinistatementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://zenithbank.com/core.stmtresp" minOccurs="0" name="GetMinistatementResult" nillable="true" type="q59:StatementResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendStatementByEmail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://zenithbank.com/core.stmtmail" minOccurs="0" name="req" nillable="true" type="q60:StatementByMailReq" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendStatementByEmailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://zenithbank.com/core.response" minOccurs="0" name="SendStatementByEmailResult" nillable="true" type="q61:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StopCheque">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://zenithbank.com/core.stopchq" minOccurs="0" name="chequeRequest" nillable="true" type="q62:StopCheque" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StopChequeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://zenithbank.com/core.response" minOccurs="0" name="StopChequeResult" nillable="true" type="q63:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RequestChequeBook">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://zenithbank.com/core.chkreq" minOccurs="0" name="chequeRequest" nillable="true" type="q64:ChequeRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RequestChequeBookResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q65="http://zenithbank.com/core.response" minOccurs="0" name="RequestChequeBookResult" nillable="true" type="q65:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Transfer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://zenithbank.com/core.trf" minOccurs="0" name="transfer" nillable="true" type="q66:Transfer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TransferResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://zenithbank.com/core.response" minOccurs="0" name="TransferResult" nillable="true" type="q67:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FundTransferONUS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://zenithbank.com/core.ZenithTransfer" minOccurs="0" name="transfer" nillable="true" type="q68:ZenithTransfer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FundTransferONUSResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q69="http://zenithbank.com/core.response" minOccurs="0" name="FundTransferONUSResult" nillable="true" type="q69:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ThirdPartyTransferOtherBank">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="http://zenithbank.com/core.ThirdPartyTransfer" minOccurs="0" name="transfer" nillable="true" type="q70:ThirdPartyTransfer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ThirdPartyTransferOtherBankResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://zenithbank.com/core.response" minOccurs="0" name="ThirdPartyTransferOtherBankResult" nillable="true" type="q71:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ThirdPartyTransferOtherBankConfirm">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q72="http://zenithbank.com/core.TransferThirdParty" minOccurs="0" name="transfer" nillable="true" type="q72:TransferThirdParty" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ThirdPartyTransferOtherBankConfirmResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q73="http://zenithbank.com/core.response" minOccurs="0" name="ThirdPartyTransferOtherBankConfirmResult" nillable="true" type="q73:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ThirdPartyLocalMoneyTransfer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/com.zenith.zcore.library" minOccurs="0" name="transfer" nillable="true" type="q74:ThirdPartyLmtTransfer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ThirdPartyLocalMoneyTransferResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q75="http://zenithbank.com/core.response" minOccurs="0" name="ThirdPartyLocalMoneyTransferResult" nillable="true" type="q75:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAirtimemerchant">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q76="http://zenithbank.com/core.clientauth" minOccurs="0" name="ClientAuth" nillable="true" type="q76:Client" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAirtimemerchantResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q77="http://zenithbank.com/core.airtelmerchantresp" minOccurs="0" name="GetAirtimemerchantResult" nillable="true" type="q77:AirtimeMerchantResp" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AirtimePurchase">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q78="http://zenithbank.com/core.airtimepurchase" minOccurs="0" name="purchase" nillable="true" type="q78:AirtimePurchase" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AirtimePurchaseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q79="http://zenithbank.com/core.response" minOccurs="0" name="AirtimePurchaseResult" nillable="true" type="q79:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BillsPayment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q80="http://zenithbank.com/core.billpayment" minOccurs="0" name="payment" nillable="true" type="q80:Billspayment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BillsPaymentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q81="http://zenithbank.com/core.response" minOccurs="0" name="BillsPaymentResult" nillable="true" type="q81:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConfirmPhcnCustomer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q82="http://zenithbank.com/core.phcnreq" minOccurs="0" name="request" nillable="true" type="q82:PhcnRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConfirmPhcnCustomerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q83="http://zenithbank.com/core.phcnConfirm" minOccurs="0" name="ConfirmPhcnCustomerResult" nillable="true" type="q83:PhcnConfirmResp" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPaymentChannel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q84="http://zenithbank.com/core.clientauth" minOccurs="0" name="ClientAuth" nillable="true" type="q84:Client" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPaymentChannelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q85="http://zenithbank.com/core.pymtchannelresp" minOccurs="0" name="GetPaymentChannelResult" nillable="true" type="q85:ChannelResp" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetElectricityZone">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q86="http://zenithbank.com/core.clientauth" minOccurs="0" name="ClientAuth" nillable="true" type="q86:Client" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetElectricityZoneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q87="http://zenithbank.com/core.zoneresp" minOccurs="0" name="GetElectricityZoneResult" nillable="true" type="q87:UtilityZoneResp" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostPhcnPayment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q88="http://zenithbank.com/core.phcnpayment" minOccurs="0" name="request" nillable="true" type="q88:PhcnPayment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostPhcnPaymentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q89="http://zenithbank.com/core.response" minOccurs="0" name="PostPhcnPaymentResult" nillable="true" type="q89:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBankBranch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q90="http://zenithbank.com/core.clientauth" minOccurs="0" name="auth" nillable="true" type="q90:Client" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBankBranchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q91="http://zenithbank.com/core.branch" minOccurs="0" name="GetBankBranchResult" nillable="true" type="q91:ArrayOfBranch" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q92="http://zenithbank.com/core.clientauth" minOccurs="0" name="auth" nillable="true" type="q92:Client" />
+        <xs:element minOccurs="0" name="SmartCard" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q93="http://zenithbank.com/core.dstvCustResp" minOccurs="0" name="GetCustomerResult" nillable="true" type="q93:DstvCustomerResp" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessDTSVPayment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q94="http://zenithbank.com/core.dstvPayment" minOccurs="0" name="payment" nillable="true" type="q94:DstvPayment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessDTSVPaymentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q95="http://zenithbank.com/core.response" minOccurs="0" name="ProcessDTSVPaymentResult" nillable="true" type="q95:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDstvProduct">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q96="http://zenithbank.com/core.clientauth" minOccurs="0" name="auth" nillable="true" type="q96:Client" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDstvProductResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q97="http://zenithbank.com/core.dstvproductResp" minOccurs="0" name="GetDstvProductResult" nillable="true" type="q97:DstvProductResp" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccountNameInquiry">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q98="http://zenithbank.com/core.nameInquiry" minOccurs="0" name="req" nillable="true" type="q98:NameInquiryRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccountNameInquiryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q99="http://zenithbank.com/core.nameinquiryResp" minOccurs="0" name="GetAccountNameInquiryResult" nillable="true" type="q99:NameInquiryResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardRecords">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q100="http://zenithbank.com/core.accountreq" minOccurs="0" name="req" nillable="true" type="q100:AccountRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCardRecordsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q101="http://zenithbank.com/core.cardResp" minOccurs="0" name="GetCardRecordsResult" nillable="true" type="q101:CardResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeactivateCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q102="http://zenithbank.com/core.carddetail" minOccurs="0" name="cards" nillable="true" type="q102:CardDetail" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeactivateCardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q103="http://zenithbank.com/core.response" minOccurs="0" name="DeactivateCardResult" nillable="true" type="q103:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActivateCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q104="http://zenithbank.com/core.carddetail" minOccurs="0" name="cards" nillable="true" type="q104:CardDetail" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActivateCardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q105="http://zenithbank.com/core.response" minOccurs="0" name="ActivateCardResult" nillable="true" type="q105:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConfirmCheque">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q106="http://schemas.datacontract.org/2004/07/com.zenith.zcore.library" minOccurs="0" name="req" nillable="true" type="q106:ChequeConfirmReq" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConfirmChequeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q107="http://zenithbank.com/core.response" minOccurs="0" name="ConfirmChequeResult" nillable="true" type="q107:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBillers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q108="http://zenithbank.com/core.clientauth" minOccurs="0" name="auth" nillable="true" type="q108:Client" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBillersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q109="http://zenithbank.com/core.billerResp" minOccurs="0" name="GetBillersResult" nillable="true" type="q109:BillerResp" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBillersName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q110="http://zenithbank.com/core.clientauth" minOccurs="0" name="auth" nillable="true" type="q110:Client" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBillersNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q111="http://zenithbank.com/core.billerResp" minOccurs="0" name="GetBillersNameResult" nillable="true" type="q111:BillerResp" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBillersByCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q112="http://zenithbank.com/core.CategoryReq" minOccurs="0" name="req" nillable="true" type="q112:BillerCategoryReq" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBillersByCategoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q113="http://zenithbank.com/core.billerResp" minOccurs="0" name="GetBillersByCategoryResult" nillable="true" type="q113:BillerResp" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBillersByID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q114="http://zenithbank.com/core.clientauth" minOccurs="0" name="auth" nillable="true" type="q114:Client" />
+        <xs:element minOccurs="0" name="BillerID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBillersByIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q115="http://zenithbank.com/core.billerResp" minOccurs="0" name="GetBillersByIDResult" nillable="true" type="q115:BillerResp" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BlockCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q116="http://zenithbank.com/core.clientauth" minOccurs="0" name="auth" nillable="true" type="q116:Client" />
+        <xs:element minOccurs="0" name="MobileNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cardType" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BlockCardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q117="http://zenithbank.com/core.response" minOccurs="0" name="BlockCardResult" nillable="true" type="q117:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnBlockCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q118="http://zenithbank.com/core.clientauth" minOccurs="0" name="auth" nillable="true" type="q118:Client" />
+        <xs:element minOccurs="0" name="MobileNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cardType" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnBlockCardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q119="http://zenithbank.com/core.response" minOccurs="0" name="UnBlockCardResult" nillable="true" type="q119:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HashPassword">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q120="http://zenithbank.com/core.clientauth" minOccurs="0" name="auth" nillable="true" type="q120:Client" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HashPasswordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q121="http://zenithbank.com/core.response" minOccurs="0" name="HashPasswordResult" nillable="true" type="q121:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ThirdPartyAtmTransfer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q122="http://zenithbank.com/core.AmtTransfer" minOccurs="0" name="transfer" nillable="true" type="q122:ThirdPartyAmtTransfer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ThirdPartyAtmTransferResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q123="http://zenithbank.com/core.response" minOccurs="0" name="ThirdPartyAtmTransferResult" nillable="true" type="q123:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerLmtATMTransfer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q124="http://zenithbank.com/core.lmtQuery" minOccurs="0" name="Req" nillable="true" type="q124:LmtQueryRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerLmtATMTransferResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q125="http://zenithbank.com/core.lmtQueryResp" minOccurs="0" name="GetCustomerLmtATMTransferResult" nillable="true" type="q125:LmtQueryResp" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerLmtATMTransferByID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q126="http://zenithbank.com/core.lmtQueryById" minOccurs="0" name="Req" nillable="true" type="q126:LmtQueryRequestByID" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerLmtATMTransferByIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q127="http://zenithbank.com/core.lmtQueryResp" minOccurs="0" name="GetCustomerLmtATMTransferByIDResult" nillable="true" type="q127:LmtQueryResp" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecallLmtATMTransferByID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q128="http://zenithbank.com/core.lmtQueryById" minOccurs="0" name="Req" nillable="true" type="q128:LmtQueryRequestByID" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecallLmtATMTransferByIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q129="http://zenithbank.com/core.response" minOccurs="0" name="RecallLmtATMTransferByIDResult" nillable="true" type="q129:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLmtAtmBalance">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RefernceNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PIN" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLmtAtmBalanceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q130="http://zenithbank.com/core.response" minOccurs="0" name="GetLmtAtmBalanceResult" nillable="true" type="q130:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResendLmtAtmTransferDetail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RefernceNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResendLmtAtmTransferDetailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q131="http://zenithbank.com/core.response" minOccurs="0" name="ResendLmtAtmTransferDetailResult" nillable="true" type="q131:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLmtAtmTransactionHistory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RefernceNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PIN" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLmtAtmTransactionHistoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q132="http://schemas.datacontract.org/2004/07/com.zenith.zcore.library" minOccurs="0" name="GetLmtAtmTransactionHistoryResult" nillable="true" type="q132:LmtAtmStatementResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendLmtAtmTransactionHistoryByEmail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RefernceNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendLmtAtmTransactionHistoryByEmailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q133="http://zenithbank.com/core.response" minOccurs="0" name="SendLmtAtmTransactionHistoryByEmailResult" nillable="true" type="q133:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuyQuickAirtime">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q134="http://schemas.datacontract.org/2004/07/com.zenith.zcore.library" minOccurs="0" name="purchase" nillable="true" type="q134:QuickAirtimePurchase" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuyQuickAirtimeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q135="http://zenithbank.com/core.response" minOccurs="0" name="BuyQuickAirtimeResult" nillable="true" type="q135:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConfirmMobileAccount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q136="http://zenithbank.com/core.maccount" minOccurs="0" name="req" nillable="true" type="q136:ConfirmMobileAccountRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConfirmMobileAccountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q137="http://zenithbank.com/core.response" minOccurs="0" name="ConfirmMobileAccountResult" nillable="true" type="q137:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateMobileRegToken">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q138="http://zenithbank.com/core.mobileConfirmation" minOccurs="0" name="req" nillable="true" type="q138:MobileConfirmation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateMobileRegTokenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q139="http://zenithbank.com/core.response" minOccurs="0" name="ValidateMobileRegTokenResult" nillable="true" type="q139:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterZMobile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q140="http://zenithbank.com/core.mRegistration" minOccurs="0" name="MRegister" nillable="true" type="q140:Registration" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterZMobileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q141="http://zenithbank.com/core.response" minOccurs="0" name="RegisterZMobileResult" nillable="true" type="q141:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterUSSD">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MRegister" nillable="true" type="tns:UssdRegistration" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="UssdRegistration">
+    <xs:sequence>
+      <xs:element xmlns:q142="http://zenithbank.com/core.clientauth" minOccurs="0" name="ClientAuth" nillable="true" type="q142:Client" />
+      <xs:element minOccurs="0" name="Last4CardDigit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MobileNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UssdPIN" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UssdRegistration" nillable="true" type="tns:UssdRegistration" />
+  <xs:element name="RegisterUSSDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q143="http://zenithbank.com/core.response" minOccurs="0" name="RegisterUSSDResult" nillable="true" type="q143:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccountName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q144="http://zenithbank.com/core.clientauth" minOccurs="0" name="ClientAuth" nillable="true" type="q144:Client" />
+        <xs:element minOccurs="0" name="AccountNo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccountNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q145="http://zenithbank.com/core.response" minOccurs="0" name="GetAccountNameResult" nillable="true" type="q145:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InitiateReOcurringTransfer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q146="http://zenithbank.com/core.ReOccurTransfer" minOccurs="0" name="transfer" nillable="true" type="q146:ReOccuringTransfer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InitiateReOcurringTransferResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q147="http://zenithbank.com/core.response" minOccurs="0" name="InitiateReOcurringTransferResult" nillable="true" type="q147:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditReOcurringTransfer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q148="http://zenithbank.com/core.ReOccurTransfer" minOccurs="0" name="transfer" nillable="true" type="q148:ReOccuringTransfer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditReOcurringTransferResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q149="http://zenithbank.com/core.response" minOccurs="0" name="EditReOcurringTransferResult" nillable="true" type="q149:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StopReOccurringTransfer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q150="http://zenithbank.com/core.ReOccurTransfer" minOccurs="0" name="transfer" nillable="true" type="q150:ReOccuringTransfer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StopReOccurringTransferResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q151="http://zenithbank.com/core.response" minOccurs="0" name="StopReOccurringTransferResult" nillable="true" type="q151:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReOcurringAirtime">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q152="http://zenithbank.com/core.StandingOrderAirtime" minOccurs="0" name="AirtimePurchase" nillable="true" type="q152:StandingOrderAirtime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReOcurringAirtimeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q153="http://zenithbank.com/core.response" minOccurs="0" name="ReOcurringAirtimeResult" nillable="true" type="q153:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StopReOcurringAirtime">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q154="http://zenithbank.com/core.StandingOrderAirtime" minOccurs="0" name="AirtimePurchase" nillable="true" type="q154:StandingOrderAirtime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StopReOcurringAirtimeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q155="http://zenithbank.com/core.response" minOccurs="0" name="StopReOcurringAirtimeResult" nillable="true" type="q155:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditReOcurringAirtime">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q156="http://zenithbank.com/core.StandingOrderAirtime" minOccurs="0" name="AirtimePurchase" nillable="true" type="q156:StandingOrderAirtime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditReOcurringAirtimeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q157="http://zenithbank.com/core.response" minOccurs="0" name="EditReOcurringAirtimeResult" nillable="true" type="q157:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteAirtime">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q158="http://zenithbank.com/core.StandingOrderAirtime" minOccurs="0" name="AirtimePurchase" nillable="true" type="q158:StandingOrderAirtime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteAirtimeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q159="http://zenithbank.com/core.response" minOccurs="0" name="DeleteAirtimeResult" nillable="true" type="q159:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeMobilePassword">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q160="http://schemas.datacontract.org/2004/07/com.zenith.zcore.library" minOccurs="0" name="Credential" nillable="true" type="q160:PasswordChange" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeMobilePasswordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q161="http://zenithbank.com/core.response" minOccurs="0" name="ChangeMobilePasswordResult" nillable="true" type="q161:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeMobilePIN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q162="http://schemas.datacontract.org/2004/07/com.zenith.zcore.library" minOccurs="0" name="Credential" nillable="true" type="q162:PasswordChange" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeMobilePINResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q163="http://zenithbank.com/core.response" minOccurs="0" name="ChangeMobilePINResult" nillable="true" type="q163:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GroupStatementByKeywords">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q164="http://schemas.datacontract.org/2004/07/com.zenith.zcore.library" minOccurs="0" name="req" nillable="true" type="q164:StatementKeywordReq" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GroupStatementByKeywordsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q165="http://schemas.datacontract.org/2004/07/com.zenith.zcore.library" minOccurs="0" name="GroupStatementByKeywordsResult" nillable="true" type="q165:StatementGroupResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResetMobilePINRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q166="http://zenithbank.com/core.PinReset" minOccurs="0" name="req" nillable="true" type="q166:ResetMobilePINReq" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResetMobilePINRequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q167="http://zenithbank.com/core.response" minOccurs="0" name="ResetMobilePINRequestResult" nillable="true" type="q167:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResetMobilePINConfirmation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q168="http://schemas.datacontract.org/2004/07/com.zenith.zcore.library" minOccurs="0" name="req" nillable="true" type="q168:ResetConfirmationReq" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResetMobilePINConfirmationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q169="http://zenithbank.com/core.response" minOccurs="0" name="ResetMobilePINConfirmationResult" nillable="true" type="q169:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateBeneficiary">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q170="http://zenithbank.com/core.beneficiaryReq" minOccurs="0" name="req" nillable="true" type="q170:BeneficiaryReq" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateBeneficiaryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q171="http://zenithbank.com/core.response" minOccurs="0" name="CreateBeneficiaryResult" nillable="true" type="q171:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditBeneficiary">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q172="http://zenithbank.com/core.beneficiaryReq" minOccurs="0" name="req" nillable="true" type="q172:BeneficiaryReq" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditBeneficiaryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q173="http://zenithbank.com/core.response" minOccurs="0" name="EditBeneficiaryResult" nillable="true" type="q173:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteBeneficiary">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q174="http://zenithbank.com/core.beneficiaryReq" minOccurs="0" name="req" nillable="true" type="q174:BeneficiaryReq" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteBeneficiaryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q175="http://zenithbank.com/core.response" minOccurs="0" name="DeleteBeneficiaryResult" nillable="true" type="q175:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBeneficiaries">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q176="http://zenithbank.com/core.clientauth" minOccurs="0" name="ClientAuth" nillable="true" type="q176:Client" />
+        <xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBeneficiariesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q177="http://zenithbank.com/core.beneficiaryResp" minOccurs="0" name="GetBeneficiariesResult" nillable="true" type="q177:BeneficiaryResp" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetZenithBeneficiaries">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q178="http://zenithbank.com/core.clientauth" minOccurs="0" name="ClientAuth" nillable="true" type="q178:Client" />
+        <xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetZenithBeneficiariesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q179="http://zenithbank.com/core.beneficiaryResp" minOccurs="0" name="GetZenithBeneficiariesResult" nillable="true" type="q179:BeneficiaryResp" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOtherBanksBeneficiaries">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q180="http://zenithbank.com/core.clientauth" minOccurs="0" name="ClientAuth" nillable="true" type="q180:Client" />
+        <xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOtherBanksBeneficiariesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q181="http://zenithbank.com/core.beneficiaryResp" minOccurs="0" name="GetOtherBanksBeneficiariesResult" nillable="true" type="q181:BeneficiaryResp" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBeneficiariesByName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q182="http://zenithbank.com/core.clientauth" minOccurs="0" name="ClientAuth" nillable="true" type="q182:Client" />
+        <xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBeneficiariesByNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q183="http://zenithbank.com/core.beneficiaryResp" minOccurs="0" name="GetBeneficiariesByNameResult" nillable="true" type="q183:BeneficiaryResp" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReoccurringAirtime">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q184="http://zenithbank.com/core.ReOccurListReq" minOccurs="0" name="req" nillable="true" type="q184:ReOccurListReq" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReoccurringAirtimeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q185="http://zenithbank.com/core.ReOcurringAirtimeResp" minOccurs="0" name="GetReoccurringAirtimeResult" nillable="true" type="q185:ReOcurringAirtimeResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReoccurringTransfer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q186="http://zenithbank.com/core.ReOccurListReq" minOccurs="0" name="req" nillable="true" type="q186:ReOccurListReq" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReoccurringTransferResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q187="http://zenithbank.com/core.ReOcurringTransferResp" minOccurs="0" name="GetReoccurringTransferResult" nillable="true" type="q187:ReOcurringTransferResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q188="http://schemas.datacontract.org/2004/07/com.zenith.zcore.library" minOccurs="0" name="message" nillable="true" type="q188:Message" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendMessageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q189="http://zenithbank.com/core.response" minOccurs="0" name="SendMessageResult" nillable="true" type="q189:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMessageCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q190="http://zenithbank.com/core.clientauth" minOccurs="0" name="ClientAuth" nillable="true" type="q190:Client" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMessageCategoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q191="http://zenithbank.com/core.MessageCategory" minOccurs="0" name="GetMessageCategoryResult" nillable="true" type="q191:ArrayOfMessageCategory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLoginSession">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q192="http://zenithbank.com/core.accountreq" minOccurs="0" name="req" nillable="true" type="q192:AccountRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLoginSessionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q193="http://schemas.datacontract.org/2004/07/com.zenith.zcore.library" minOccurs="0" name="GetLoginSessionResult" nillable="true" type="q193:SessionResp" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBillersCategories">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q194="http://zenithbank.com/core.clientauth" minOccurs="0" name="ClientAuth" nillable="true" type="q194:Client" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBillersCategoriesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q195="http://zenithbank.com/core.CategoryResp" minOccurs="0" name="GetBillersCategoriesResult" nillable="true" type="q195:CategoryResp" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StandingOrderQuery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q196="http://zenithbank.com/core.StandOrderEnq" minOccurs="0" name="req" nillable="true" type="q196:StandingOrderEnq" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StandingOrderQueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q197="http://zenithbank.com/core.orderResult" minOccurs="0" name="StandingOrderQueryResult" nillable="true" type="q197:StandingOrderResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MastcardMerchantPay">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q198="http://schemas.datacontract.org/2004/07/com.zenith.zcore.library" minOccurs="0" name="req" nillable="true" type="q198:MastCardMobilePaymentReq" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MastcardMerchantPayResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q199="http://zenithbank.com/core.response" minOccurs="0" name="MastcardMerchantPayResult" nillable="true" type="q199:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConfirmTransfer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q200="http://zenithbank.com/core.ConfirmReq" minOccurs="0" name="req" nillable="true" type="q200:ConfirmReq" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConfirmTransferResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q201="http://schemas.datacontract.org/2004/07/com.zenith.zcore.library" minOccurs="0" name="ConfirmTransferResult" nillable="true" type="q201:TransferConfirmation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AccountNumberExist">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="req" nillable="true" type="tns:MobileConfirmationReq" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AccountNumberExistResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q202="http://zenithbank.com/core.response" minOccurs="0" name="AccountNumberExistResult" nillable="true" type="q202:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SoftTokenAuthenticationGen">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q203="http://zenithbank.com/core.accountreq" minOccurs="0" name="req" nillable="true" type="q203:AccountRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SoftTokenAuthenticationGenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q204="http://zenithbank.com/core.response" minOccurs="0" name="SoftTokenAuthenticationGenResult" nillable="true" type="q204:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

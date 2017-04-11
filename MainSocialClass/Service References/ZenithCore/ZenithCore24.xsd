@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://zenithbank.com/core.clientauth" elementFormDefault="qualified" targetNamespace="http://zenithbank.com/core.clientauth" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Client">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CallerID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CallerReference" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClientName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Client" nillable="true" type="tns:Client" />
+</xs:schema>

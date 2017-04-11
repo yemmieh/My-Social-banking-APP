@@ -1,0 +1,376 @@
+﻿@{
+    ViewBag.Title = "Social Banking";
+    ViewBag.Label = "Social Banking";
+}
+<style>
+    #mainbodi {
+        width: 750px;
+        background: #fff;
+        border: 2px solid #eee;
+        box-shadow: 0 1px 2px #aaa;
+    }
+
+
+
+    /*[data-icon]:before {
+        font-family: 'any-old-icon';
+        content: attr(data-icon);
+        speak: none;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .pavitra-s-tandon-only-goodness, .ian-yates-y-fronts, .pavitra-s-tandon-chat-for-lovers, .muhamad-bahrul-ulum-log-out, .muhamad-bahrul-ulum-log-in, .justin-skull-ribbon, .justin-burns-skull, .justin-burns-skull-badge, .designmodo-settings, .designmodo-location, .designmodo-like, .cole-townsend-pencil, .cole-townsend-check, .cole-townsend-chat, .ian-yates-porridge, .ian-yates-mr-whippy, .ian-yates-milk, .aleks-dorohovich-rocket, .vincent-gschwindemann-sun, .vectortuts-pirate-panda, .sanjit-saha-afro, .samuel-sosina-command-line, .quin-robinson-casual-shoe, .michael-howarth-tardis, .kenneth-bielinski-timer, .juan-ortiz-zaforas-plug-f-female, .juan-ortiz-zaforas-plug-c-female, .juan-gomez-alzaga-rocking-horse, .juan-gomez-alzaga-paint-brush, .juan-gomez-alzaga-leaf, .juan-gomez-alzaga-bird, .jeffrey-herrera-beer-mug, .jack-rugile-anchor, .ilias-ismanalijev-batman, .corinne-ducusin-doumbek, .aleks-dorohovich-triforce, .steve-debeus-farm, .patrik-larsson-pokemon, .patrik-larsson-pakman, .ordog-zoltan-canon, .johana-barretto-kitty, .johana-barretto-kitty-stripy, .jj-moi-manga-poison, .jj-moi-manga-eye, .jj-moi-kneel, .dom-waters-speedo, .dom-waters-knife, .derek-mui-tie, .derek-mui-invader, .darren-reay-telephone-box, .darren-reay-pen-nib, .arno-hattingh-park, .anton-boshoff-headset, .joshua-barker-landscape, .joshua-barker-house, .jory-raphael-cart, .johan-manuel-hernandez-record-player, .danis-lou-joystick, .christina-pedersen-walkman, .christina-pedersen-cassette, .chris-spittles-unpinned, .chris-spittles-save, .chris-spittles-pinned, .chris-spittles-health, .chris-spittles-geo-location, .cesgra-globe, .matt-hakes-spectacles, .matt-hakes-moustache, .ian-yates-creative-commons {
+        font-family: 'any-old-icon';
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+    }*/
+
+
+    /* General grid styles */
+    .cbp-ig-grid {
+        list-style: none;
+        padding: 0 0 50px 0;
+        margin: 0;
+    }
+
+        /* Clear floats */
+        .cbp-ig-grid:before,
+        .cbp-ig-grid:after {
+            content: " ";
+            display: table;
+        }
+
+        .cbp-ig-grid:after {
+            clear: both;
+        }
+
+        /* grid item */
+        .cbp-ig-grid li {
+            width: 24.9%;
+            float: left;
+            height: 185px;
+            /*text-align: center;*/
+            padding: 0.3% 0.3%;
+            /*background: #fff;*/
+            /*border-top: 1px solid #ddd;*/
+            /*border: 1px solid #dddddd;
+            box-shadow: 0 0 5px #ddd;*/
+        }
+
+            /* we are using a combination of borders and box shadows to control the grid lines */
+            .cbp-ig-grid li:nth-child(-n+3) {
+                border-top: none;
+                padding: 10px;
+            }
+
+            .cbp-ig-grid li:nth-child(3n-1),
+            .cbp-ig-grid li:nth-child(3n-2) {
+                /*box-shadow: 1px 0 0 #ddd;*/
+                padding: 10px;
+            }
+
+            /* anchor style */
+            .cbp-ig-grid li > a {
+                background: rgba(199,195,199,1);
+                background: -moz-linear-gradient(top, rgba(199,195,199,1) 0%, rgba(150,145,150,1) 100%);
+                background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(199,195,199,1)), color-stop(100%, rgba(150,145,150,1)));
+                background: -webkit-linear-gradient(top, rgba(199,195,199,1) 0%, rgba(150,145,150,1) 100%);
+                background: -o-linear-gradient(top, rgba(199,195,199,1) 0%, rgba(150,145,150,1) 100%);
+                background: -ms-linear-gradient(top, rgba(199,195,199,1) 0%, rgba(150,145,150,1) 100%);
+                background: linear-gradient(to bottom, rgba(199,195,199,1) 0%, rgba(150,145,150,1) 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c7c3c7', endColorstr='#969196', GradientType=0 );
+                background: rgb(240, 240, 240);
+                display: block;
+                height: 100%;
+                color: #BB1D1A;
+                -webkit-transition: background 0.2s;
+                -moz-transition: background 0.2s;
+                transition: background 0.2s;
+                border-radius: 0.3em;
+                border: 1px solid #fff;
+                border-top: 2px solid #8A0707;
+                border: 1px solid #E2DDDD;
+                box-shadow: 0 0 4px #E8E5E5;
+                padding: 0.3% 0.3%;
+            }
+
+                .cbp-ig-grid li > a .cbp-ig-icon {
+                    margin-top: 10px;
+                    margin-bottom: 30px;
+                    background: #fff;
+                    margin-left: 10px;
+                    width: 60%;
+                    padding: 11%;
+                    border-radius: .2em;
+                    font-weight: bolder;
+                    border: 1px solid #dddddd;
+                }
+    /* the icon with pseudo class for icon font */
+    .cbp-ig-icon {
+        padding: 0px 0 0 0;
+        display: block;
+        -webkit-transition: -webkit-transform 0.2s;
+        transition: -moz-transform 0.2s;
+        transition: transform 0.2s;
+    }
+
+        .cbp-ig-icon:before {
+            font-family: 'FontAwesome';
+            font-size: 3em;
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+        }
+
+    .cbp-ig-icon-shoes:before {
+        content: "\e039";
+    }
+
+    .cbp-ig-icon-shoe:before {
+        content: "\e000";
+    }
+
+    .Recharge:before {
+        content: "\f10a";
+        font-family: 'FontAwesome';
+    }
+
+    .Balance:before {
+        font-family: 'FontAwesome';
+        content: "\f1ec";
+    }
+
+    .cbp-ig-icon-whippy:before {
+        content: "\f19c";
+        font-family: 'FontAwesome';
+    }
+
+    .bank:before {
+        content: "\f19c";
+        font-family: 'FontAwesome';
+    }
+
+    .Statement:before {
+        content: "\f1c1";
+        font-family: 'FontAwesome';
+    }
+
+    .cbp-ig-icon-doumbek:before {
+        content: "\e007";
+    }
+
+    /* title element */
+    .cbp-ig-grid .cbp-ig-title {
+        margin: 20px 0 10px 9px;
+        padding: 20px 0 0 0;
+        font-size: 1.1em;
+        position: relative;
+        -webkit-transition: -webkit-transform 0.2s;
+        -moz-transition: -moz-transform 0.2s;
+        transition: transform 0.2s;
+        /*font-family: 'Ostrich_font';*/
+        font-family: helvetica,arial,sans-serif;
+        text-align: justify;
+        color: #6F94BD;
+        letter-spacing: -0.5px;
+        /*font-weight: bold;*/
+        text-rendering: optimizeLegibility !important;
+        -webkit-font-smoothing: antialiased !important;
+    }
+
+        .cbp-ig-grid .cbp-ig-title:before {
+            content: '';
+            position: absolute;
+            /*background: #fff;*/
+            width: 100%;
+            height: 1px;
+            top: 0px;
+            left: 50%;
+            margin: -10px 0 0 -74px;
+            -webkit-transition: margin-top 0.2s; /* top or translate does not seem to work in Firefox */
+            -moz-transition: margin-top 0.2s;
+            transition: margin-top 0.2s;
+        }
+
+    .cbp-ig-grid .cbp-ig-category {
+        text-transform: uppercase;
+        display: inline-block;
+        font-size: 1em;
+        letter-spacing: 1px;
+        color: #fff;
+        -webkit-transform: translateY(10px);
+        -moz-transform: -moz-translateY(10px);
+        -ms-transform: -ms-translateY(10px);
+        transform: translateY(10px);
+        opacity: 0;
+        -webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+        -moz-transition: -moz-transform 0.3s, opacity 0.2s;
+        -webkit-transition: transform 0.3s, opacity 0.2s;
+        font-family: helvetica,arial,sans-serif;
+        text-align: justify;
+        margin-left: 9px;
+    }
+
+    .cbp-ig-grid a:hover .cbp-ig-category,
+    .touch .cbp-ig-grid a .cbp-ig-category {
+        opacity: 0.6;
+        -webkit-transform: translateY(-20px);
+        -moz-transform: translateY(-20px);
+        -ms-transform: translateY(-20px);
+        transform: translateY(-20px);
+    }
+
+    /* Hover styles */
+
+    .cbp-ig-grid li > a:hover {
+        background: #BB1D1A;
+    }
+
+        .cbp-ig-grid li > a:hover .cbp-ig-icon {
+            -webkit-transform: translateY(10px);
+            -moz-transform: translateY(10px);
+            -ms-transform: translateY(10px);
+            transform: translateY(10px);
+        }
+
+            .cbp-ig-grid li > a:hover .cbp-ig-icon:before,
+            .cbp-ig-grid li > a:hover .cbp-ig-title,
+            .cbp-ig-grid li > a:hover .awefont {
+                color: #fff;
+            }
+
+        .cbp-ig-grid li > a:hover .cbp-ig-title {
+            -webkit-transform: translateY(-30px);
+            -moz-transform: translateY(-30px);
+            -ms-transform: translateY(-30px);
+            transform: translateY(-30px);
+        }
+
+            .cbp-ig-grid li > a:hover .cbp-ig-title:before {
+                background: #fff;
+                margin-top: 50px;
+            }
+
+
+
+
+
+
+
+
+
+
+
+    body {
+        font-family: 'Lato', Calibri, Arial, sans-serif;
+        color: #47a3da;
+    }
+
+    a {
+        color: #f0f0f0;
+        text-decoration: none;
+    }
+
+        a:hover {
+            color: #000;
+        }
+
+
+    .main {
+        /*width: 90%;*/
+        padding: 0PX 30PX 30PX;
+        margin: 0 auto;
+        /*margin-top: -40px;*/
+    }
+
+    .Componentcontainer {
+        /*margin-top: 100px;*/
+        background: url('../img/guilloche.png') no-repeat bottom right;
+        background-color: white;
+        /*border: 2px solid #eee;*/ 
+        box-shadow: 0 1px 2px #aaa;
+    }
+
+
+    .bp-icon:after {
+        font-family: 'bpicons';
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        text-align: center;
+        color: #47a3da;
+        -webkit-font-smoothing: antialiased;
+    }
+ .awefont {
+        font-size: 3em !important;
+    }
+ .Homelink{
+    display:none;
+}
+</style>
+
+
+
+<div class="Componentcontainer" >
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+   
+    <div class="main">
+
+        <ul class="cbp-ig-grid">
+           
+            <li>
+
+                <a href="https://realtime.zenithbank.com/AspireAccount4FaceBook/E-AccountOpeningForm.aspx?idAspire=Aspire">
+                    <span class="cbp-ig-icon ban"><span class="icon-book-open awefont" style="color:#038ee0;"></span></span>
+                    <h3 class="cbp-ig-title">Aspire Account</h3>
+                    <span class="cbp-ig-category">Zenith Bank</span>
+                </a>
+
+            </li>
+            <li>
+                <a href="../Socialbanking/InztaRecharge/index/">
+                    <span class="cbp-ig-icon Recharg"><span class="icon-mobile awefont" style="color: #edc422; "></span></span>
+                    <h3 class="cbp-ig-title">Airtime Recharge</h3>
+                    <span class="cbp-ig-category">Zenith Bank</span>
+                </a>
+            </li>
+            <li>
+                <a href="../Socialbanking/AccountQuery/index/">
+                    <span class="cbp-ig-icon Balanc"><span class="icon-wallet awefont" style="color: #bb1c1a; "></span></span>
+                    <h3 class="cbp-ig-title">Account Balance</h3>
+                    <span class="cbp-ig-category">Zenith Bank</span>
+                </a>
+            </li>
+            <li>
+                <a href="../Socialbanking/Statement/index/">
+                    <span class="cbp-ig-icon "><span class="icon-document awefont" style="color: #4a6084; "></span></span>
+                    <h3 class="cbp-ig-title">Statement of Account</h3>
+                    <span class="cbp-ig-category">Zenith Bank</span>
+                </a>
+            </li>
+          
+
+        </ul>
+    </div>
+</div>
+

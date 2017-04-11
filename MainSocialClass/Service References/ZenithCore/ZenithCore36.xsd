@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://zenithbank.com/core.trf" elementFormDefault="qualified" targetNamespace="http://zenithbank.com/core.trf" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd2" namespace="http://zenithbank.com/core.clientauth" />
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd3" namespace="http://zenithbank.com/core.customerauth" />
+  <xs:complexType name="Transfer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BeneficiaryAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BeneficiaryBankAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BeneficiaryBankBIC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BeneficiaryBankName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BeneficiaryFirstname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BeneficiaryFullname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BeneficiaryOthernames" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BeneficiarySurname" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://zenithbank.com/core.clientauth" minOccurs="0" name="ClientAuth" nillable="true" type="q1:Client" />
+      <xs:element minOccurs="0" name="CollectionBranchName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreditAccount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreditAccountType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreditBankCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://zenithbank.com/core.customerauth" minOccurs="0" name="CustomerAuth" nillable="true" type="q2:CustomerAuth" />
+      <xs:element minOccurs="0" name="DebitAccountName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeditAccount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmailAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IDMeans" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IPAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IntermediaryBank" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IntermediaryBankAccount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IntermediaryBankBic" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="McCollectorName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MobileNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NatureOfTransfer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaymentMode" type="xs:int" />
+      <xs:element minOccurs="0" name="PreferedTransferedMethod" type="xs:int" />
+      <xs:element minOccurs="0" name="Purpose" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoutingCodeNOSC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TestAnswer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TestQuestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TransferMode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Transfer" nillable="true" type="tns:Transfer" />
+</xs:schema>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://zenithbank.com/core.dstvCust" elementFormDefault="qualified" targetNamespace="http://zenithbank.com/core.dstvCust" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="DstvCustomer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerNumber" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="EmailAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HomeTelephone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Initial" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Language" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Salutation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Surname" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DstvCustomer" nillable="true" type="tns:DstvCustomer" />
+</xs:schema>

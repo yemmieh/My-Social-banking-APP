@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://zenithbank.com/core.dstvproductResp" elementFormDefault="qualified" targetNamespace="http://zenithbank.com/core.dstvproductResp" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://172.29.30.40/ZenithCoreService/ZenithCore.svc?xsd=xsd42" namespace="http://zenithbank.com/core.dstvproduct" />
+  <xs:complexType name="DstvProductResp">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://zenithbank.com/core.dstvproduct" minOccurs="0" name="ProductList" nillable="true" type="q1:ArrayOfDstvProduct" />
+      <xs:element minOccurs="0" name="ResponseCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DstvProductResp" nillable="true" type="tns:DstvProductResp" />
+</xs:schema>
